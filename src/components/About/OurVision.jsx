@@ -1,0 +1,64 @@
+import React from 'react'
+import visionImg from "../../assets/about/ourVision.png";
+import missionImg from "../../assets/about/ourMission.png";
+
+const visionData = [
+  {
+    id: 1,
+    title: "Our Vision",
+    description: (
+      <>
+        Our Vision is to provide compassionate, expert pediatric care from infancy through adolescence.<br />
+        Our goal is to support every child’s health and happiness at every stage.<br />
+        With trust and warmth, we build lifelong relationships with families.
+      </>
+    ),
+    image: visionImg,
+  },
+  {
+    id: 2,
+    title: "Our Mission",
+    description: (
+      <>
+        Our mission is to deliver compassionate, high-quality pediatric care that nurtures every child’s health, growth, and well-being. We are committed to building trust with families through expert treatment, empathy, and continuous support at every stage of childhood.
+      </>
+    ),
+    image: missionImg,
+  }
+];
+
+const OurVision = () => {
+  return (
+    <div className="relative w-full py-12 bg-white overflow-x-hidden">
+      {/* Purple horizontal band */}
+      <div className="absolute top-1/2 left-0 w-full h-48 bg-[#B05BA6] opacity-30 -translate-y-1/2 z-0"></div>
+      <div className="relative z-10 container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
+          {visionData.map((item) => (
+            <div
+              key={item.id}
+              className="flex-1 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center max-w-xl mx-auto"
+              style={{ minWidth: 320 }}
+            >
+              <h2 className="text-[#A82682] text-2xl md:text-4xl font-bold mb-4 text-center">{item.title}</h2>
+              <div className="w-full flex justify-center">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="rounded-xl w-full h-[260px] object-contain"
+                />
+              </div>
+              <div className="pt-8 pb-4 px-2">
+                <p className="text-[#A3A3A3] text-base md:text-lg text-center font-medium leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default OurVision
