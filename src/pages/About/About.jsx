@@ -13,22 +13,17 @@ const About = () => {
       <div>
         <img src={header} alt="" />
       </div>
-      <div>
+      <div className='py-5'>
         <AboutDoctor />
-      </div>
-      <div>
+      
         <OurStory />
-      </div>
-      <div>
+      
         <OurVision />
-      </div>
-      <div>
+      
         <ParentsTrust />
-      </div>
-      <div>
+     
         <Caring />
-      </div>
-      <div>
+     
         <Contact/>
       </div>
     </div>

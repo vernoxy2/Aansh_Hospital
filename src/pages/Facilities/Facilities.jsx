@@ -8,7 +8,7 @@ const Facilities = () => {
       <div>
         <img src={hero} alt="" className='w-full'/>
       </div>
-      <div>
+      <div className='py-5'>
         <OurHospital/>
       </div>
     </div>

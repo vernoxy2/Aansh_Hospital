@@ -9,10 +9,9 @@ const Services = () => {
       <div>
         <img src={hero} alt="" className='w-full'/>
       </div>
-      <div>
+      <div className='py-5'>
         <Child />
-      </div>
-      <div>
+      
         <OurService />
       </div>
     </div>

@@ -5,15 +5,18 @@ import icon3 from "../../assets/servicesSectionImg3.png";
 import icon4 from "../../assets/servicesSectionImg4.png";
 import icon5 from "../../assets/servicesSectionImg5.png";
 import icon6 from "../../assets/servicesSectionImg6.png";
+import ContactHero from "../FAQ/ContactHero";
 
 const services = [
   {
-    title: "Separate NICU For Septic Newborn (Isolation for Infectious Babies)",
+    // title: "Separate NICU For Septic Newborn (Isolation for Infectious Babies)",
+    title: "Isolation NICU for septic infants",
     desc: "Dedicated NICU for septic newborns ensures safe, isolated care for infectious and vulnerable babies.",
     icon: icon1,
   },
   {
-    title: "Kangaroo Mother Care & Feeding Room For Mothers & Babies",
+    // title: "Kangaroo Mother Care & Feeding Room For Mothers & Babies",
+    title: "Mother-Baby Kangaroo Care Space",
     desc: "Safe, nurturing space for mother-baby bonding through Kangaroo Care and breastfeeding support.",
     icon: icon2,
   },
@@ -52,17 +55,20 @@ const OurService = () => {
           {services.map((item, index) => (
             <div
               key={index}
-              className="bg-[#F6F4F4] rounded-xl text-center p-6 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out space-y-4"
+              className="bg-[#F6F4F4] rounded-xl text-center p-6 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col justify-between h-full"
             >
-              <div>
-                <h3 className="text-lg md:text-2xl font-bold mb-3 leading-snug text-primary font-bold">
+              {/* Fixed height text section */}
+              <div className="h-[180px] flex flex-col justify-start space-y-3">
+                <h3 className="text-lg md:text-2xl font-bold leading-snug text-primary">
                   {item.title}
                 </h3>
-                <p className="text-sm md:text-base mb-5 text-secondary font-semibold">
+                <p className="text-sm md:text-base text-secondary font-semibold">
                   {item.desc}
                 </p>
               </div>
-              <div className=" mx-auto flex items-center justify-center">
+
+              {/* Image section always positioned at bottom */}
+              <div className="mt-6 flex items-end justify-center">
                 <img
                   src={item.icon}
                   alt={item.title}
@@ -78,6 +84,7 @@ const OurService = () => {
           View More
         </button>
       </div>
+      <ContactHero />
     </div>
   );
 };

@@ -12,9 +12,9 @@ const Home = () => {
       <div>
         <img src={headerHomeImg} alt="" />
       </div>
-      <div className="">
+      <div className="py-5">
         <div>
-          <h1 className="text-[#A82682] font-bold text-2xl lg:text-6xl text-center mt-4 lg:mt-12">
+          <h1 className="text-[#A82682] font-bold text-2xl lg:text-6xl text-center lg:mt-12">
             Who We are
           </h1>
         </div>

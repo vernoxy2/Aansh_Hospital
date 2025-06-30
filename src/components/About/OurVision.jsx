@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import visionImg from "../../assets/about/ourVision.png";
 import missionImg from "../../assets/about/ourMission.png";
 
@@ -8,9 +8,10 @@ const visionData = [
     title: "Our Vision",
     description: (
       <>
-        Our Vision is to provide compassionate, expert pediatric care from infancy through adolescence.<br />
-        Our goal is to support every child’s health and happiness at every stage.<br />
-        With trust and warmth, we build lifelong relationships with families.
+        Our Vision is to provide compassionate, expert pediatric care from
+        infancy through adolescence. Our goal is to support every child’s health
+        and happiness at every stage. With trust and warmth, we build lifelong
+        relationships with families.
       </>
     ),
     image: visionImg,
@@ -20,11 +21,14 @@ const visionData = [
     title: "Our Mission",
     description: (
       <>
-        Our mission is to deliver compassionate, high-quality pediatric care that nurtures every child’s health, growth, and well-being. We are committed to building trust with families through expert treatment, empathy, and continuous support at every stage of childhood.
+        “Deliver compassionate pediatric care, nurturing children’s growth,
+        health, and family trust.” This preserves the essence—compassion,
+        quality, growth, trust—while trimming the length. Modeled after strong,
+        family‑focused pediatric missions
       </>
     ),
     image: missionImg,
-  }
+  },
 ];
 
 const OurVision = () => {
@@ -38,9 +42,10 @@ const OurVision = () => {
             <div
               key={item.id}
               className="flex-1 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center max-w-xl mx-auto"
-              style={{ minWidth: 320 }}
             >
-              <h2 className="text-[#A82682] text-2xl md:text-4xl font-bold mb-4 text-center">{item.title}</h2>
+              <h2 className="text-[#A82682] text-2xl md:text-4xl font-bold mb-4 text-center">
+                {item.title}
+              </h2>
               <div className="w-full flex justify-center">
                 <img
                   src={item.image}
@@ -58,7 +63,7 @@ const OurVision = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OurVision
+export default OurVision;

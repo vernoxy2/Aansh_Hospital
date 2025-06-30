@@ -72,20 +72,20 @@ const basicFacilities = [
 const OurHospitalFacilities = () => (
   <div>
     <div className="py-10 max-w-7xl mx-auto">
-      <h2 className="text-center text-3xl md:text-5xl font-bold text-fuchsia-700 mb-10">
+      <h2 className="text-center text-3xl md:text-5xl font-bold text-primary mb-10">
         Explore Our Hospital Facilities
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {facilities.map((facility, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl shadow-lg p-5 flex flex-col transition duration-300 hover:bg-fuchsia-700 group cursor-pointer"
+            className="bg-white rounded-xl shadow-lg p-5 flex flex-col transition duration-300 hover:bg-primary group cursor-pointer space-y-8"
           >
             <div>
-              <h3 className="font-bold text-lg md:text-xl mb-2 font-primary text-fuchsia-700 group-hover:text-white transition duration-300">
+              <h3 className="font-bold text-lg md:text-xl mb-2 text-primary  group-hover:text-white transition duration-300">
                 {facility.title}
               </h3>
-              <p className="text-gray-600 text-sm mb-4 font-secondary group-hover:text-white transition duration-300">
+              <p className="text-sm mb-4 text-secondary group-hover:text-white transition duration-300">
                 {facility.desc}
               </p>
             </div>
