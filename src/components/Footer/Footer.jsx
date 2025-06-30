@@ -66,7 +66,7 @@ const Footer = () => {
         {footerLinks.map((section, index) => (
           <div key={index} className="text-left w-full">
             {/* Mobile Dropdown */}
-            <div className="lg:hidden">
+            {/* <div className="lg:hidden">
               <button
                 onClick={() => toggleDropdown(index)}
                 className="w-full text-left font-bold text-xl text-primary"
@@ -85,7 +85,43 @@ const Footer = () => {
                   ))}
                 </ul>
               )}
+            </div> */}
+
+            <div className="lg:hidden flex items-center justify-between w-full">
+              <button
+                onClick={() => toggleDropdown(index)}
+                className="w-full text-left font-bold text-xl text-primary flex items-center justify-between border-b-2 border-primary"
+              >
+                {section.heading}
+                <svg
+                  className={`w-6 h-6 ml-2 transition-transform duration-200 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
             </div>
+            {openIndex === index && (
+              <ul className="pl-4 space-y-1">
+                {section.links.map((link, i) => (
+                  <li
+                    key={i}
+                    className="text-secondary font-semibold cursor-pointer"
+                  >
+                    {link}
+                  </li>
+                ))}
+              </ul>
+            )}
 
             {/* Desktop View */}
             <div className="hidden lg:block">
