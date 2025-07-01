@@ -8,7 +8,7 @@ const Contact = () => {
       <div>
         <img src={bg} alt="" className='w-full'/>
       </div>
-      <div className='py-8'>
+      <div className='py-10'>
         <ContactUs />
       </div>
     </div>

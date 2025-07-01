@@ -8,7 +8,7 @@ const Career = () => {
       <div>
         <img src={career} alt="" className='w-full'/>
       </div>
-      <div>
+      <div className='py-10'>
         <WhyWork />
       </div>
     </div>

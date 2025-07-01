@@ -8,8 +8,8 @@ const Facilities = () => {
       <div>
         <img src={hero} alt="" className='w-full'/>
       </div>
-      <div className='py-5'>
-        <OurHospital/>
+      <div className='py-10'>
+        <OurHospital />
       </div>
     </div>
   )
