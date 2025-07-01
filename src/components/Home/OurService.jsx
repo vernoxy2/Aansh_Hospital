@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import icon1 from "../../assets/servicesSectionImg1.png";
 import icon2 from "../../assets/servicesSectionImg2.png";
 import icon3 from "../../assets/servicesSectionImg3.png";
@@ -43,9 +45,12 @@ const services = [
 ];
 
 const OurService = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div>
-      <div>
+      <div data-aos="fade-up">
         <h1 className="text-center text-2xl xl:text-6xl font-bold text-primary">
           Our Services
         </h1>
@@ -56,6 +61,7 @@ const OurService = () => {
             <div
               key={index}
               className="bg-[#F6F4F4] rounded-xl text-center p-6 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col justify-between h-full"
+              data-aos="fade-down"
             >
               {/* Fixed height text section */}
               <div className="h-[180px] flex flex-col justify-start space-y-3">
@@ -68,7 +74,7 @@ const OurService = () => {
               </div>
 
               {/* Image section always positioned at bottom */}
-              <div className="mt-6 flex items-end justify-center">
+              <div className="mt-6 flex items-end justify-center" data-aos="fade-right">
                 <img
                   src={item.icon}
                   alt={item.title}
@@ -79,7 +85,7 @@ const OurService = () => {
           ))}
         </div>
       </section>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center" data-aos="fade-down-right">
         <button className="bg-primary text-white xl:px-4 px-2 py-1 xl:py-2 xl:text-2xl font-bold rounded-xl">
           View More
         </button>

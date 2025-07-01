@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import heart from "../../assets/footer_lower.webp";
 import bg from "../../assets/footer_bg.webp";
+import AppointmentForm from "../Navbar/AppointmentForm";
 
 const footerLinks = [
   {
@@ -37,6 +38,7 @@ const footerLinks = [
 
 const Footer = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
 
   const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -56,7 +58,7 @@ const Footer = () => {
             women and children with expert doctors, innovation, and easy
             appointment booking.
           </p>
-          <button className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary">
+          <button className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary" onClick={() => setShowAppointmentModal(true)}>
             <span>📅</span> Book an Appointment
             <span className="ml-auto">➔</span>
           </button>
@@ -168,6 +170,21 @@ const Footer = () => {
       <div className="xl:-mt-24 -mt-8">
         <img src={heart} alt="Heart Line" className="ml-auto" />
       </div>
+
+      {/* Appointment Modal */}
+      {showAppointmentModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md relative">
+            <button
+              className="absolute top-2 right-2 text-2xl text-gray-400 hover:text-primary"
+              onClick={() => setShowAppointmentModal(false)}
+            >
+              &times;
+            </button>
+            <AppointmentForm onClose={() => setShowAppointmentModal(false)} />
+          </div>
+        </div>
+      )}
     </footer>
   );
 };

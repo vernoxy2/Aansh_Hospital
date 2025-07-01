@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import bg from "../../assets/career/Mask_group.png";
 
-
 const UploadResume = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
-    <div className="py-10">
+    <div className="py-10"  data-aos="fade-left">
       <h2 className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary">
         Upload Your Resume
       </h2>

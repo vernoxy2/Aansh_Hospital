@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import visionImg from "../../assets/about/ourVision.png";
 import missionImg from "../../assets/about/ourMission.png";
 
@@ -32,6 +34,9 @@ const visionData = [
 ];
 
 const OurVision = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div className="relative w-full py-12 bg-white overflow-x-hidden">
       {/* Purple horizontal band */}
@@ -42,6 +47,7 @@ const OurVision = () => {
             <div
               key={item.id}
               className="flex-1 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center max-w-xl mx-auto"
+              data-aos="fade-up-right"
             >
               <h2 className="text-[#A82682] text-2xl md:text-4xl font-bold mb-4 text-center">
                 {item.title}

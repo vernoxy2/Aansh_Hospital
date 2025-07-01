@@ -1,9 +1,14 @@
-import React from "react";
-import bg from "../../assets/contact/Mask_group.png"
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import bg from "../../assets/contact/Mask_group.png";
 
 const ContactForm = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-down">
       <section
         className="bg-cover bg-no-repeat bg-center py-10 px-4"
         style={{ backgroundImage: `url(${bg})` }}

@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import ContactForm from "./ContactForm";
 
 const ContactUs = () => {
+    useEffect(() => {
+      AOS.init({ duration: 1000, once: true });
+    }, []);
   return (
     <div>
       <div className="flex flex-col md:flex-row items-center justify-center xl:gap-40 py-10 px-2 md:px-8">
         {/* Contact Card */}
-        <div className="bg-white shadow-lg border-2  p-8 max-w-md w-full mb-6 md:mb-0">
+        <div className="bg-white shadow-lg border-2  p-8 max-w-md w-full mb-6 md:mb-0" data-aos="fade-right">
           <h2 className="text-3xl font-bold text-primary mb-2 font-primary">
             Need Any Help?
           </h2>
@@ -99,7 +104,7 @@ const ContactUs = () => {
           </div>
         </div>
         {/* Google Map */}
-        <div className="w-full max-w-3xl h-80 rounded-xl shadow-lg overflow-hidden border border-gray-200">
+        <div className="w-full max-w-3xl h-80 rounded-xl shadow-lg overflow-hidden border border-gray-200" data-aos="fade-left">
           <iframe
             title="Aansh Children's Hospital Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.123456789!2d72.9281234!3d20.6101234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjDCsDM2JzM2LjQiTiA3MsKwNTUnNDIuNSJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"

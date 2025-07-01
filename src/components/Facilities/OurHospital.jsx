@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import img1 from "../../assets/facilities/Mask_group.png";
 import img2 from "../../assets/facilities/Mask_group_(1).png";
 import img3 from "../../assets/facilities/Mask_group_(2).png";
@@ -20,20 +23,19 @@ const facilities = [
     title: "ROP Screening - for Premature Babies",
     desc: "ROP screening for premature babies ensures early detection and protection against vision-threatening retinal conditions.",
     image: img2,
-    highlight: "bg-fuchsia-700 text-white",
   },
   {
-    title: "Spacious Rooms for Indoor Patients atients",
+    title: "Spacious Rooms for Indoor Patients",
     desc: "Bright, spacious patient room with modern bed, soft lighting, calming colors, and discreet medical equipment.",
     image: img3,
   },
   {
-    title: "Latest Conventional entional & High Frequency Ventilat ventilators",
+    title: "Latest Conventional & High Frequency Ventilators",
     desc: "High-tech NICU corner with ventilators, incubators, sterile setup, soft lighting, and organized medical supplies.",
     image: img4,
   },
   {
-    title: "Biosafety Cabinet For Fluid and Antibiotic Antibiotic Preparation",
+    title: "Biosafety Cabinet For Fluid and Antibiotic Preparation",
     desc: "Modern hospital utility room with color-coded pipelines, gauges, regulators, and clean, organized medical gas supply system.",
     image: img5,
   },
@@ -41,7 +43,6 @@ const facilities = [
     title: "Central Air/Oxygen Supply System",
     desc: "High-tech hospital gas system with color-coded outlets, digital gauges, secure valves, and sterile surroundings.",
     image: img6,
-    highlight: "border-2 border-blue-400",
   },
 ];
 
@@ -62,80 +63,101 @@ const basicFacilities = [
   },
   {
     title: "Ambulance Facility",
-    desc: "Hospital offers a large, safe, and convenient parking facility for patients, visitors, and staff members.",
+    desc: "24/7 ambulance facility for emergency care and patient transport with trained staff and advanced equipment.",
     icon: ambulanceImg,
     iconAlt: "Ambulance Icon",
     color: "text-fuchsia-700",
   },
 ];
 
-const OurHospitalFacilities = () => (
-  <div>
-    <div className="py-10 max-w-7xl mx-auto">
-      <h2 className="text-center text-3xl md:text-5xl font-bold text-primary mb-10">
-        Explore Our Hospital Facilities
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {facilities.map((facility, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl shadow-lg p-5 flex flex-col transition duration-300 hover:bg-primary group cursor-pointer space-y-8"
-          >
-            <div>
-              <h3 className="font-bold text-lg md:text-xl mb-2 text-primary  group-hover:text-white transition duration-300">
-                {facility.title}
-              </h3>
-              <p className="text-sm mb-4 text-secondary group-hover:text-white transition duration-300">
-                {facility.desc}
-              </p>
-            </div>
-            <img
-              src={facility.image}
-              alt={facility.title}
-              className="rounded-lg w-full h-48 object-cover mt-auto"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className="py-10 max-w-7xl mx-auto">
-      <h2 className="text-center text-3xl md:text-5xl font-bold text-fuchsia-700 mb-10 font-primary">
-        Our Facilities
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {basicFacilities.map((facility, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-xl shadow-lg flex flex-col items-center transition duration-300  group cursor-pointer"
-          >
-            <img
-              src={facility.icon}
-              alt={facility.iconAlt}
-              className="w-72 h-72 object-contain"
-            />
+const OurHospitalFacilities = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
-            <div className="p-5">
-              <h3
-                className={`font-bold text-lg md:text-xl mb-2 font-primary ${facility.color}  transition duration-300 text-center`}
-              >
-                {facility.title}
-              </h3>
-              <p className=" text-sm mb-4 font-secondary  transition duration-300 text-center">
-                {facility.desc}
-              </p>
+  return (
+    <div>
+      {/* Advanced Facilities */}
+      <div className="py-10 max-w-7xl mx-auto">
+        <h2
+          className="text-center text-3xl md:text-5xl font-bold text-primary mb-10"
+          data-aos="zoom-in"
+        >
+          Explore Our Hospital Facilities
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {facilities.map((facility, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-lg p-5 flex flex-col transition duration-300 hover:bg-primary group cursor-pointer space-y-8"
+              data-aos="flip-up"
+            >
+              <div>
+                <h3 className="font-bold text-lg md:text-xl mb-2 text-primary group-hover:text-white transition duration-300">
+                  {facility.title}
+                </h3>
+                <p className="text-sm mb-4 text-secondary group-hover:text-white transition duration-300">
+                  {facility.desc}
+                </p>
+              </div>
+              <img
+                src={facility.image}
+                alt={facility.title}
+                className="rounded-lg w-full h-48 object-cover mt-auto"
+              />
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+      </div>
+
+      {/* Basic Facilities */}
+      <div className="py-10 max-w-7xl mx-auto">
+        <h2
+          className="text-center text-3xl md:text-5xl font-bold text-fuchsia-700 mb-10"
+          data-aos="zoom-in"
+        >
+          Our Facilities
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {basicFacilities.map((facility, idx) => (
+            <div
+              key={idx}
+              className="bg-white rounded-xl shadow-lg flex flex-col items-center transition duration-300 group cursor-pointer"
+              data-aos="flip-down"
+            >
+              <img
+                src={facility.icon}
+                alt={facility.iconAlt}
+                className="w-72 h-72 object-contain"
+              />
+              <div className="p-5">
+                <h3
+                  className={`font-bold text-lg md:text-xl mb-2 text-center ${facility.color}`}
+                >
+                  {facility.title}
+                </h3>
+                <p className="text-sm mb-4 text-center">
+                  {facility.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Highlight Banner */}
+      <div
+        className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
+        data-aos="fade-up"
+      >
+        <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
+          Our hospital ensures convenience and safety with well-organized parking,
+          a fully-stocked in-house pharmacy, and 24/7 ambulance service — all
+          designed to support patients, visitors, and staff efficiently.
+        </p>
       </div>
     </div>
-    <div className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4">
-      <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
-        Our hospital ensures convenience and safety with well-organized parking,
-        a fully-stocked in-house pharmacy, and 24/7 ambulance service — all
-        designed to support patients, visitors, and staff efficiently.
-      </p>
-    </div>
-  </div>
-);
+  );
+};
 
 export default OurHospitalFacilities;

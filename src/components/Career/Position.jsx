@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import UploadResume from "./UploadResume";
 
 const positions = [
@@ -81,9 +83,12 @@ const positions = [
 ];
 
 const Position = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div className="w-full">
-      <div className="max-w-5xl mx-auto mt-12 mb-12">
+      <div className="max-w-5xl mx-auto mt-12 mb-12"  data-aos="flip-up">
         <div className="border-2 border-primary rounded-2xl overflow-hidden">
           <div className="bg-primary text-white font-bold text-lg grid grid-cols-2 sm:grid-cols-5 px-4 py-3">
             <div className="col-span-1 sm:col-span-2">Position</div>

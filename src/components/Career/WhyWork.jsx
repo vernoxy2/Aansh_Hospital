@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Position from "./Position";
 // import img1 from "../../assets/career/Group1.png";
 // import img2 from "../../assets/career/Group2.png";
@@ -80,16 +82,23 @@ const features = [
   },
 ];
 
-
-
 const WhyWork = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div>
       <div className="py-10 mx-auto">
-        <h2 className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary">
+        <h2
+          className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary"
+          data-aos="fade-up"
+        >
           Why Work With Us
         </h2>
-        <div className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4">
+        <div
+          className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
+          data-aos="fade-left"
+        >
           <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
             We're committed to creating an environment where both our team and
             the children we serve can thrive and reach their full potential.
@@ -101,6 +110,7 @@ const WhyWork = () => {
               <div
                 key={idx}
                 className="bg-white rounded-xl shadow-lg p-6 flex items-start gap-4 transition duration-300 group cursor-pointer"
+                data-aos="fade-down-right"
               >
                 <div className="bg-primary rounded-full flex items-center justify-center w-14 h-14 shrink-0">
                   {feature.icon}
@@ -119,10 +129,16 @@ const WhyWork = () => {
         </div>
       </div>
       <div>
-        <h2 className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary">
+        <h2
+          className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary"
+          data-aos="fade-up"
+        >
           Open Positions
         </h2>
-        <div className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4">
+        <div
+          className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
+          data-aos="fade-left"
+        >
           <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
             We're committed to creating an environment where both our team and
             the children we serve can thrive and reach their full potential.

@@ -7,7 +7,7 @@ const Contact = () => {
       {/* Main content and image */}
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto">
         {/* Left: Text content */}
-        <div className="flex-1 z-10 flex flex-col items-start justify-center max-w-xl">
+        <div className="flex-1 z-10 flex flex-col items-start justify-center max-w-xl" data-aos="fade-right">
           {/* Magenta bar and heading */}
           <div className="flex items-center mb-4">
             {/* <span className="inline-block h-8 w-20 bg-[#A82682] rounded-l-xl mr-3"></span> */}
@@ -23,7 +23,7 @@ const Contact = () => {
           </button>
         </div>
         {/* Right: Telephone image */}
-        <div className="flex-1 flex justify-end items-center w-full mt-12 lg:mt-0">
+        <div className="flex-1 flex justify-end items-center w-full mt-12 lg:mt-0" data-aos="fade-left">
           <img
             src={telephone}
             alt="Telephone"

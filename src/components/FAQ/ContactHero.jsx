@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 // import bg from "../../assets/FAQ/Mask_group(1).png";
-import bg from "../../assets/FAQ/Mask_group.png"
+import bg from "../../assets/FAQ/Mask_group.png";
 
 const ContactHero = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div
       className="container  flex flex-col lg:flex-row items-center justify-between px-4 md:px-16 py-10"
       //min-h-[320px]
+      data-aos="fade-up"
     >
       {/* Left Content */}
       <div className="flex-1 flex flex-col justify-center items-start max-w-xl">
@@ -32,7 +38,7 @@ const ContactHero = () => {
           src={bg}
           alt="Contact Phone"
           className="w-full max-w-xxl object-contain"
-        //   style={{ minWidth: 220 }}
+          //   style={{ minWidth: 220 }}
         />
       </div>
     </div>

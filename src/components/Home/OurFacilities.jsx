@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import image1 from "../../assets/facilitiesSectionImg1.png";
 import image2 from "../../assets/facilitiesSectionImg2.jpg";
 import image3 from "../../assets/facilitiesSectionImg3.png";
@@ -22,9 +24,12 @@ const programs = [
 ];
 
 const OurFacilities = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div>
-      <div>
+      <div data-aos="zoom-in">
         <h1 className="text-center text-2xl xl:text-6xl font-bold text-primary">
           Our Facilities
         </h1>
@@ -36,6 +41,7 @@ const OurFacilities = () => {
             <div
               key={index}
               className="relative overflow-hidden rounded-2xl shadow-md group "
+              data-aos="flip-right"
             >
               <img
                 src={item.image}
@@ -50,7 +56,7 @@ const OurFacilities = () => {
           ))}
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10" data-aos="fade-down-right">
           <button className="bg-primary text-white xl:px-4 px-2 py-1 xl:py-2 xl:text-2xl font-bold rounded-xl">
             View More
           </button>

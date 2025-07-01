@@ -6,7 +6,7 @@ import {
   FaPhoneAlt,
   FaSearch,
   FaEnvelope,
-  FaCalendarPlus
+  FaCalendarPlus,
 } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import AppointmentForm from "./AppointmentForm";
@@ -66,22 +66,26 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg py-4">
-        <div className="w-full mx-auto flex items-center justify-between lg:px-20 relative">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg py-2">
+        <div className="w-full mx-auto flex items-center justify-between px-2 sm:px-4 md:px-8 xl:px-20 2xl:px-32 relative min-h-[70px] md:min-h-[100px]">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <img src={logo} alt="Logo" className="h-24 w-auto" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-16 md:h-20 xl:h-24 max-h-[200px] w-auto"
+            />
           </div>
 
           {/* NavLinks (centered on xl+) */}
           <div className="hidden xl:flex flex-1 justify-center">
-            <div className="flex items-center bg-[#A82682] rounded-lg px-2 py-2">
+            <div className="flex items-center bg-[#A82682] rounded-lg px-2 py-2 gap-x-0.5 whitespace-nowrap">
               {navLinks.map(({ to, label }) => (
                 <NavLink
                   key={to}
                   to={to}
                   className={({ isActive }) =>
-                    `px-5 py-2 rounded-lg font-bold transition-colors duration-200 text-xl ${
+                    `px-2 py-2 rounded-lg font-bold transition-colors duration-200 text-base ${
                       isActive
                         ? "bg-white text-[#A82682]"
                         : "text-white hover:bg-white/20"
@@ -109,7 +113,7 @@ const Navbar = () => {
             ) : (
               <div
                 ref={searchRef}
-                className="flex items-center border-2 border-primary rounded-md bg-white px-2 h-10 w-40 xs:w-48 md:w-64 transition"
+                className="flex items-center border-2 border-primary rounded-md bg-white px-2 h-10 w-32 xs:w-40 md:w-64 transition"
               >
                 <input
                   type="text"
@@ -165,15 +169,19 @@ const Navbar = () => {
           <div
             key={isOpen ? "open" : "closed"}
             ref={menuRef}
-            className="lg:hidden absolute top-16 left-0 w-full bg-gray-800 text-white flex flex-col gap-4 px-6 py-4 z-50"
+            className="lg:hidden absolute top-16 left-0 w-full bg-gray-800 text-white flex flex-col gap-4 px-4 py-4 z-50"
           >
             {navLinks.map(({ to, label }) => (
               <NavLink
                 key={to}
                 to={to}
                 className={({ isActive }) =>
-                  `py-1 text-sm ${
+                  `py-2 text-base md:text-lg ${
                     isActive ? "text-blue-400" : "hover:text-blue-300"
+                  }${
+                    label === "About Us" || label === "Contact Us"
+                      ? " my-1"
+                      : ""
                   }`
                 }
                 onClick={() => {
@@ -189,44 +197,55 @@ const Navbar = () => {
       </nav>
 
       {/* Sticky Right Side Panel */}
-      <div className="fixed right-0 top-1/2 transform -translate-y-1/2 z-40 flex flex-col gap-6 p-2">
+      <div className="fixed right-4 md:right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-6 p-2">
         {/* Emergency Button */}
         <a
           href={`tel:${phoneNumber}`}
-          className="bg-primary text-white rounded-l-xl shadow-lg hover:bg-[#c51162] transition-all duration-300 flex flex-col items-center justify-between w-14 h-36 py-4"
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-col justify-between items-center w-14 h-40 px-1 py-3"
         >
-          <span className="font-bold text-base tracking-wide" style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}>
+          <span
+            className="text-white font-bold text-xs sm:text-sm"
+            style={{
+              writingMode: "vertical-rl",
+              transform: "rotate(180deg)",
+              textOrientation: "mixed",
+            }}
+          >
             Emergency
           </span>
-          <span className="flex flex-col items-center mt-2">
-            <span className="bg-white rounded-full flex items-center justify-center w-8 h-8">
-              <FaPhoneAlt className="text-primary text-lg" />
-            </span>
-          </span>
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mt-1">
+            <FaPhoneAlt className="text-[#CD895C] text-sm sm:text-base" />
+          </div>
         </a>
+
         {/* Enquire Now Button */}
         <a
           href="mailto:drashishgamit9@gmail.com"
-          className="bg-primary text-white rounded-l-xl shadow-lg hover:bg-[#c51162] transition-all duration-300 flex flex-col items-center justify-between w-14 h-36 py-4"
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-col justify-between items-center w-14 h-40 px-1 py-3"
         >
-          <span className="font-bold text-base tracking-wide" style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}>
+          <span
+            className="text-white font-bold text-xs sm:text-sm"
+            style={{
+              writingMode: "vertical-rl",
+              transform: "rotate(180deg)",
+              textOrientation: "mixed",
+            }}
+          >
             Enquire Now
           </span>
-          <span className="flex flex-col items-center mt-2">
-            <span className="bg-white rounded-full flex items-center justify-center w-8 h-8">
-              <FaEnvelope className="text-primary text-lg" />
-            </span>
-          </span>
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mt-1">
+            <FaEnvelope className="text-[#CD895C] text-sm sm:text-base" />
+          </div>
         </a>
       </div>
 
       {/* Sticky Book an Appointment Button (Bottom Right) */}
       <button
-        className="fixed bottom-6 right-6 z-50 bg-primary text-white rounded-full shadow-lg flex items-center gap-2 px-5 py-3 hover:bg-fuchsia-700 transition text-lg font-bold"
+        className="fixed bottom-2 sm:bottom-4 md:bottom-8 right-2 sm:right-4 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center gap-2 px-3 sm:px-4 md:px-5 py-2 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
         onClick={() => setShowAppointmentModal(true)}
         aria-label="Book an appointment"
       >
-        <FaCalendarPlus className="text-2xl" />
+        <FaCalendarPlus className="text-lg sm:text-xl md:text-2xl" />
         <span className="hidden sm:inline">Book an appointment</span>
       </button>
 

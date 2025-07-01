@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import support from "../../assets/about/support.png";
 import hygiene from "../../assets/about/hygiene.png";
 import comfort from "../../assets/about/comfort.png";
@@ -7,32 +9,45 @@ const caringData = [
   {
     id: 1,
     title: "Support",
-    description: "Friendly hospital staff providing dedicated support, guidance, and care to families for a better experience.",
+    description:
+      "Friendly hospital staff providing dedicated support, guidance, and care to families for a better experience.",
     image: support,
   },
   {
     id: 2,
     title: "Hygiene",
-    description: "Dedicated staff ensure hospital cleanliness and strict hygiene protocols for a safe and healthy environment.",
+    description:
+      "Dedicated staff ensure hospital cleanliness and strict hygiene protocols for a safe and healthy environment.",
     image: hygiene,
   },
   {
     id: 3,
     title: "Comfort",
-    description: "Comfortable, well-equipped room providing warmth and care for mothers and newborns.",
+    description:
+      "Comfortable, well-equipped room providing warmth and care for mothers and newborns.",
     image: comfort,
   },
 ];
 
 const Caring = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div className="w-full py-12 px-4">
-      <h2 className="text-primary text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12">
+      <h2
+        className="text-primary text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12"
+        data-aos="fade-up"
+      >
         Caring Beyond Treatment.
       </h2>
       <div className="flex flex-col md:flex-row items-center justify-center gap-20">
         {caringData.map((item) => (
-          <div key={item.id} className="flex flex-col items-center w-full max-w-xs">
+          <div
+            key={item.id}
+            className="flex flex-col items-center w-full max-w-xs"
+            data-aos="flip-down"
+          >
             {/* Circle image with magenta border and dots */}
             <div className="relative flex items-center justify-center mb-6">
               {/* Outer magenta border */}
@@ -46,7 +61,9 @@ const Caring = () => {
               </div>
             </div>
             {/* Title */}
-            <h3 className="text-primary text-xl md:text-2xl font-bold mb-2 text-center">{item.title}</h3>
+            <h3 className="text-primary text-xl md:text-2xl font-bold mb-2 text-center">
+              {item.title}
+            </h3>
             {/* Description */}
             <p className="text-secondary text-base md:text-lg font-medium text-center">
               {item.description}

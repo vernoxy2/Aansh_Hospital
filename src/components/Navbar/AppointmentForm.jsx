@@ -1,5 +1,15 @@
 import React, { useState } from "react";
 
+const getTodayDate = () => {
+  const today = new Date();
+  return today.toISOString().split("T")[0];
+};
+
+const getCurrentTime = () => {
+  const now = new Date();
+  return now.toTimeString().slice(0, 5);
+};
+
 const AppointmentForm = ({ onClose }) => {
   const [form, setForm] = useState({
     name: "",
@@ -11,12 +21,26 @@ const AppointmentForm = ({ onClose }) => {
     message: "",
   });
 
+  const todayStr = getTodayDate();
+  const isToday = form.date === todayStr;
+  const minTime = isToday ? getCurrentTime() : "00:00";
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Prevent past date
+    if (form.date < todayStr) {
+      alert("Date cannot be in the past.");
+      return;
+    }
+    // Prevent past time if today
+    if (isToday && form.time < minTime) {
+      alert("Time cannot be in the past.");
+      return;
+    }
     // Handle form submission (API call, validation, etc.)
     alert("Appointment submitted!");
     onClose();
@@ -59,6 +83,7 @@ const AppointmentForm = ({ onClose }) => {
         value={form.date}
         onChange={handleChange}
         required
+        min={todayStr}
       />
       <input
         type="time"
@@ -67,6 +92,7 @@ const AppointmentForm = ({ onClose }) => {
         value={form.time}
         onChange={handleChange}
         required
+        min={minTime}
       />
       <select
         name="department"

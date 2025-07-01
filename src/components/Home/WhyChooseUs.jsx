@@ -1,5 +1,7 @@
-import React from "react";
-import image from "../../assets/line.png"
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import image from "../../assets/line.png";
 import image1 from "../../assets/section1.png";
 import image2 from "../../assets/section2.png";
 import image3 from "../../assets/section3.png";
@@ -37,15 +39,21 @@ const features = [
 ];
 
 const WhyChooseUs = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <section>
       <div className="flex flex-col xl:flex-row items-center justify-center xl:gap-24 xl:pl-48 xl:py-8">
-        <div className="">
+        <div className="" data-aos="zoom-in">
           <h1 className="text-2xl xl:text-6xl font-bold text-primary text-center xl:text-left xl:-mt-6">
             Why Choose Us
           </h1>
         </div>
-        <div className="hidden xl:block">
+        <div
+          className="hidden xl:block"
+          data-aos="flip-up"
+        >
           <img src={image} alt="Why Choose Us" className="w-full" />
         </div>
       </div>
@@ -57,6 +65,7 @@ const WhyChooseUs = () => {
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
+                data-aos="flip-left"
               >
                 <div className="relative">
                   <img

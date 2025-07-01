@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import headerHomeImg from "../../assets/headerHomeImg.png";
 import whoWeAreImg from "../../assets/baby.png";
 import OurService from "../../components/Home/OurService";
@@ -7,21 +9,29 @@ import WhyChooseUs from "../../components/Home/WhyChooseUs";
 import CuttingEdge from "../../components/Home/CuttingEdge";
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
     <div className="">
-      <div>
+      <div data-aos="fade-down">
         <img src={headerHomeImg} alt="" />
       </div>
       <div className="py-5">
-        <div>
+        <div data-aos="fade-up">
           <h1 className="text-[#A82682] font-bold text-2xl lg:text-6xl text-center lg:mt-12">
             Who We are
           </h1>
         </div>
         <div className="xl:flex grid justify-between lg:p-20">
-          <div className="lg:pt-16 xl:space-y-10 xl:pl-20">
+          <div
+            className="lg:pt-16 xl:space-y-10 xl:pl-20"
+            data-aos="fade-right"
+          >
             <h1 className="text-[#A82682] text-2xl lg:text-6xl xl:text-left text-center font-bold">
-              Where Every Baby's <br className="hidden xl:inline"/> Smile Begins.
+              Where Every Baby's <br className="hidden xl:inline" /> Smile
+              Begins.
             </h1>
             <p className="text-[#BAB8B8] text-xl lg:text-2xl lg:w-[700px] xl:text-left text-center">
               We are dedicated to nurturing little ones with compassion, safety,
@@ -32,20 +42,20 @@ const Home = () => {
               happiest start in life.
             </p>
           </div>
-          <div>
+          <div data-aos="fade-left">
             <img src={whoWeAreImg} alt="" />
           </div>
         </div>
-        <div>
-          <OurService/>
+        <div data-aos="fade-up">
+          <OurService />
         </div>
-        <div className="mt-5 xl:mt-20">
+        <div className="mt-5 xl:mt-20" data-aos="zoom-in-up">
           <OurFacilities />
         </div>
-        <div className="mt-5 xl:mt-20">
-          <WhyChooseUs/>
+        <div className="mt-5 xl:mt-20" data-aos="fade-up">
+          <WhyChooseUs />
         </div>
-        <div className="mt-5 xl:mt-20">
+        <div className="mt-5 xl:mt-20" data-aos="fade-up">
           <CuttingEdge />
         </div>
       </div>
