@@ -10,7 +10,7 @@ const AboutDoctor = () => {
   return (
     <div className="w-full py-8" >
       <h1 className="text-center text-primary text-2xl lg:text-6xl font-bold mb-8" data-aos="zoom-in">
-        About Our Docotor
+        About Our Doctor
       </h1>
       <div className="">
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-8 xl:gap-60 2xl:gap-80 px-4 xl:px-40">

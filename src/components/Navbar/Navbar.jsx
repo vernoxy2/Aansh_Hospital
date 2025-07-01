@@ -66,7 +66,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg py-2">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
         <div className="w-full mx-auto flex items-center justify-between px-2 sm:px-4 md:px-8 xl:px-20 2xl:px-32 relative min-h-[70px] md:min-h-[100px]">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
@@ -197,23 +197,23 @@ const Navbar = () => {
       </nav>
 
       {/* Sticky Right Side Panel */}
-      <div className="fixed right-4 md:right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-6 p-2">
+      <div className="fixed bottom-2 left-0 md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:left-auto md:right-0 z-40 flex flex-row md:flex-col gap-2 md:gap-4">
         {/* Emergency Button */}
         <a
           href={`tel:${phoneNumber}`}
-          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-col justify-between items-center w-14 h-40 px-1 py-3"
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-row md:flex-col justify-between items-center w-20 h-14 md:w-14 md:h-40 px-1 py-2"
         >
           <span
-            className="text-white font-bold text-xs sm:text-sm"
+            className="text-white font-bold text-xs sm:text-sm md:mb-0 md:rotate-180"
             style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
+              writingMode: "horizontal-tb",
               textOrientation: "mixed",
+              ...(window.innerWidth >= 768 ? { writingMode: 'vertical-rl', transform: 'rotate(180deg)' } : {})
             }}
           >
             Emergency
           </span>
-          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mt-1">
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 md:ml-0 md:mt-1">
             <FaPhoneAlt className="text-[#CD895C] text-sm sm:text-base" />
           </div>
         </a>
@@ -221,19 +221,19 @@ const Navbar = () => {
         {/* Enquire Now Button */}
         <a
           href="mailto:drashishgamit9@gmail.com"
-          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-col justify-between items-center w-14 h-40 px-1 py-3"
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-row md:flex-col justify-between items-center w-20 h-14 md:w-14 md:h-40 px-1 py-2"
         >
           <span
-            className="text-white font-bold text-xs sm:text-sm"
+            className="text-white font-bold text-xs sm:text-sm md:mb-0 md:rotate-180"
             style={{
-              writingMode: "vertical-rl",
-              transform: "rotate(180deg)",
+              writingMode: "horizontal-tb",
               textOrientation: "mixed",
+              ...(window.innerWidth >= 768 ? { writingMode: 'vertical-rl', transform: 'rotate(180deg)' } : {})
             }}
           >
             Enquire Now
           </span>
-          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center mt-1">
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 md:ml-0 md:mt-1">
             <FaEnvelope className="text-[#CD895C] text-sm sm:text-base" />
           </div>
         </a>

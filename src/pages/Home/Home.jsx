@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headerHomeImg from "../../assets/headerHomeImg.png";
+import smallHomeImg from "../../assets/HeaderSmall.png";
 import whoWeAreImg from "../../assets/baby.png";
 import OurService from "../../components/Home/OurService";
 import OurFacilities from "../../components/Home/OurFacilities";
@@ -15,8 +16,13 @@ const Home = () => {
 
   return (
     <div className="">
-      <div data-aos="fade-down">
-        <img src={headerHomeImg} alt="" />
+      <div data-aos="fade-down" className="mt-20">
+        <img
+          src={smallHomeImg}
+          alt=""
+          className="block md:hidden w-full mx-auto"
+        />
+        <img src={headerHomeImg} alt="" className="hidden md:block w-full mx-auto" />
       </div>
       <div className="py-5">
         <div data-aos="fade-up">
