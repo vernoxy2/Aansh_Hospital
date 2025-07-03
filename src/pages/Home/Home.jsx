@@ -65,7 +65,7 @@ const Home = () => {
           <WhyChooseUs />
         </div>
         <div className="mt-5 xl:mt-20" data-aos="fade-up">
-          <CuttingEdge />
+          <CuttingEdge/>
         </div>
       </div>
     </div>

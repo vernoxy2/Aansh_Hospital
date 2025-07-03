@@ -23,7 +23,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        kulim: ['"Kulim Park"', ...defaultTheme.fontFamily.sans],
+        kulim: ['"Kulim Park"', "sans-serif"],
       },
       colors: {
         primary: "#A82682",
@@ -41,11 +41,14 @@ export default {
   },
   plugins: [
     function ({ addUtilities }) {
-      addUtilities({
-        '.writing-vertical': {
-          writingMode: 'vertical-rl',
+      addUtilities(
+        {
+          ".writing-vertical": {
+            writingMode: "vertical-rl",
+          },
         },
-      }, ['responsive']);
+        ["responsive"]
+      );
     },
   ],
 };
