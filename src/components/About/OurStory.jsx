@@ -6,9 +6,9 @@ import nurse from "../../assets/about/nurse.png";
 const OurStory = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
-    <div className="w-full py-8">
+    <div className="w-full py-8 overflow-x-hidden">
       <div className="container">
         <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-8 xl:gap-40 2xl:gap-80 px-4 xl:px-40">
           {/* Text first for left side on large screens */}

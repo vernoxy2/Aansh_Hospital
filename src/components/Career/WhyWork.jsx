@@ -40,10 +40,10 @@ const features = [
 const WhyWork = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="py-10 mx-auto">
         <h2
           className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary"

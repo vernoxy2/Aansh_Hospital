@@ -6,7 +6,7 @@ import doctor from "../../assets/about/ashish.png";
 const AboutDoctor = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div className="w-full py-8" >
       <h1 className="text-center text-primary text-2xl lg:text-6xl font-bold mb-8" data-aos="zoom-in">

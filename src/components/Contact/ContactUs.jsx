@@ -6,9 +6,9 @@ import ContactForm from "./ContactForm";
 const ContactUs = () => {
     useEffect(() => {
       AOS.init({ duration: 1000, once: true });
-    }, []);
+    });
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <div className="flex flex-col md:flex-row items-center justify-center xl:gap-40 py-10 px-2 md:px-8">
         {/* Contact Card */}
         <div className="bg-white shadow-lg border-2  p-8 max-w-md w-full mb-6 md:mb-0" data-aos="fade-right">

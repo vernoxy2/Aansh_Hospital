@@ -32,7 +32,7 @@ const caringData = [
 const Caring = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div className="w-full py-12 px-4">
       <h2

@@ -6,7 +6,7 @@ import bg from "../../assets/contact/Mask_group.png";
 const ContactForm = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div data-aos="fade-down">
       <section

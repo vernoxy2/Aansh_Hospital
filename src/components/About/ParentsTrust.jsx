@@ -7,9 +7,9 @@ import staff from "../../assets/about/staff.png";
 const ParentsTrust = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
-    <div>
+    <div  className="overflow-x-hidden">
       <div className="w-full flex flex-col lg:flex-row items-center justify-center py-12 px-4 lg:px-20">
         {/* Heart-shaped image */}
         <div

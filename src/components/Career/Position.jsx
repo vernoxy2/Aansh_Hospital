@@ -85,7 +85,7 @@ const positions = [
 const Position = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div className="w-full">
       <div className="max-w-5xl mx-auto mt-12 mb-12"  data-aos="flip-up">

@@ -26,7 +26,7 @@ const programs = [
 const OurFacilities = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div>
       <div data-aos="zoom-in">
@@ -48,7 +48,7 @@ const OurFacilities = () => {
                 alt={item.title}
                 className="w-full h-[450px] object-cover rounded-2xl"
               />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-fuchsia-800 via-fuchsia-700/90 to-transparent p-4 text-white">
+              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary via-primary/90 to-transparent p-4 text-white">
                 <h3 className="text-2xl font-bold">{item.title}</h3>
                 <p className="text-base mt-1">{item.desc}</p>
               </div>

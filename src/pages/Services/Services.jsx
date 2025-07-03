@@ -5,11 +5,18 @@ import hero from "../../assets/services/hero.png";
 import smallHero from "../../assets/services/background_small.png";
 import Child from "../../components/Services/Child";
 import OurService from "../../components/Home/OurService";
+import { useLocation } from "react-router-dom";
 
 const Services = () => {
+  const location = useLocation();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
   return (
     <div className="">
       <div data-aos="fade-down" className="mt-20">

@@ -7,7 +7,7 @@ import bg from "../../assets/FAQ/Mask_group.png";
 const ContactHero = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div
       className="container  flex flex-col lg:flex-row items-center justify-between px-4 md:px-16 py-10"
@@ -37,7 +37,7 @@ const ContactHero = () => {
         <img
           src={bg}
           alt="Contact Phone"
-          className="w-full max-w-xxl object-contain"
+          className="w-full max-w-xxl object-contain hidden lg:block"
           //   style={{ minWidth: 220 }}
         />
       </div>

@@ -15,6 +15,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1280); // xl breakpoint
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
   const searchRef = useRef(null);
@@ -64,6 +65,17 @@ const Navbar = () => {
     };
   }, [showSearch]);
 
+  // Responsive handler
+  useEffect(() => {
+    function handleResize() {
+      setIsMobile(window.innerWidth < 1280); // xl breakpoint
+    }
+    window.addEventListener("resize", handleResize);
+    // Set on mount
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
@@ -78,26 +90,28 @@ const Navbar = () => {
           </div>
 
           {/* NavLinks (centered on xl+) */}
-          <div className="hidden xl:flex flex-1 justify-center">
-            <div className="flex items-center bg-[#A82682] rounded-lg px-2 py-2 gap-x-0.5 whitespace-nowrap">
-              {navLinks.map(({ to, label }) => (
-                <NavLink
-                  key={to}
-                  to={to}
-                  className={({ isActive }) =>
-                    `px-2 py-2 rounded-lg font-bold transition-colors duration-200 text-base ${
-                      isActive
-                        ? "bg-white text-[#A82682]"
-                        : "text-white hover:bg-white/20"
-                    }`
-                  }
-                  onClick={() => window.scrollTo(0, 0)}
-                >
-                  {label}
-                </NavLink>
-              ))}
+          {!isMobile && (
+            <div className="hidden xl:flex flex-1 justify-center">
+              <div className="flex items-center bg-[#A82682] rounded-lg px-2 py-2 gap-x-0.5 whitespace-nowrap">
+                {navLinks.map(({ to, label }) => (
+                  <NavLink
+                    key={to}
+                    to={to}
+                    className={({ isActive }) =>
+                      `px-2 py-2 rounded-lg font-bold transition-colors duration-200 text-base ${
+                        isActive
+                          ? "bg-white text-[#A82682]"
+                          : "text-white hover:bg-white/20"
+                      }`
+                    }
+                    onClick={() => window.scrollTo(0, 0)}
+                  >
+                    {label}
+                  </NavLink>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Right Section: Search, Call, Get Started, Hamburger */}
           <div className="flex items-center gap-2 ml-auto">
@@ -147,7 +161,7 @@ const Navbar = () => {
               Get Started
             </button>
             {/* Hamburger for mobile */}
-            {!showSearch && (
+            {isMobile && !showSearch && (
               <button
                 ref={buttonRef}
                 onClick={() => setIsOpen(!isOpen)}
@@ -165,7 +179,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isOpen && (
+        {isMobile && isOpen && (
           <div
             key={isOpen ? "open" : "closed"}
             ref={menuRef}
@@ -199,7 +213,7 @@ const Navbar = () => {
       {/* Sticky Right Side Panel */}
       <div className="fixed bottom-2 left-0 md:top-1/2 md:-translate-y-1/2 md:bottom-auto md:left-auto md:right-0 z-40 flex flex-row md:flex-col gap-2 md:gap-4">
         {/* Emergency Button */}
-        <a
+        {/* <a
           href={`tel:${phoneNumber}`}
           className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-row md:flex-col justify-between items-center w-20 h-14 md:w-14 md:h-40 px-1 py-2"
         >
@@ -216,24 +230,42 @@ const Navbar = () => {
           <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 md:ml-0 md:mt-1">
             <FaPhoneAlt className="text-[#CD895C] text-sm sm:text-base" />
           </div>
+        </a> */}
+
+        {/* Emergency Button */}
+        <a
+          href={`tel:${phoneNumber}`}
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 
+     flex flex-row lg:flex-col justify-center items-center 
+     w-36 h-14 lg:w-14 lg:h-40 px-1 py-2"
+        >
+          <span
+            className="text-white font-bold text-xs sm:text-sm 
+       lg:writing-vertical lg:rotate-180 
+       lg:mb-0"
+          >
+            Emergency
+          </span>
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 lg:ml-0 lg:mt-2">
+            <FaPhoneAlt className="text-[#CD895C] text-sm sm:text-base" />
+          </div>
         </a>
 
         {/* Enquire Now Button */}
         <a
           href="mailto:drashishgamit9@gmail.com"
-          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 flex flex-row md:flex-col justify-between items-center w-20 h-14 md:w-14 md:h-40 px-1 py-2"
+          className="bg-[#CD895C] text-white rounded-l-xl shadow-lg hover:bg-[#CD895C]/90 transition-all duration-300 
+     flex flex-row lg:flex-col justify-center items-center 
+     w-36 h-14 lg:w-14 lg:h-40 px-1 py-2"
         >
           <span
-            className="text-white font-bold text-xs sm:text-sm md:mb-0 md:rotate-180"
-            style={{
-              writingMode: "horizontal-tb",
-              textOrientation: "mixed",
-              ...(window.innerWidth >= 768 ? { writingMode: 'vertical-rl', transform: 'rotate(180deg)' } : {})
-            }}
+            className="text-white font-bold text-xs sm:text-sm 
+       lg:writing-vertical lg:rotate-180 
+       lg:mb-0"
           >
             Enquire Now
           </span>
-          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 md:ml-0 md:mt-1">
+          <div className="bg-white rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center ml-2 lg:ml-0 lg:mt-2">
             <FaEnvelope className="text-[#CD895C] text-sm sm:text-base" />
           </div>
         </a>

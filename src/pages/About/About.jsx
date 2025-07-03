@@ -9,11 +9,18 @@ import OurVision from "../../components/About/OurVision";
 import ParentsTrust from "../../components/About/ParentsTrust";
 import Caring from "../../components/About/Caring";
 import Contact from "../../components/About/Contact";
+import { useLocation } from "react-router-dom";
 
 const About = () => {
-  useEffect(() => {
+  const location = useLocation();
+  
+  useEffect(() => { 
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
   return (
     <div>
       <div data-aos="fade-down" className="mt-20">

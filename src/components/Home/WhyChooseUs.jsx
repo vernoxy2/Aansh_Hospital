@@ -41,7 +41,7 @@ const features = [
 const WhyChooseUs = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <section>
       <div className="flex flex-col xl:flex-row items-center justify-center xl:gap-24 xl:pl-48 xl:py-8">

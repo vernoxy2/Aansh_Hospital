@@ -5,11 +5,18 @@ import Questions from "../../components/FAQ/Questions";
 import ContactHero from "../../components/FAQ/ContactHero";
 import bg from "../../assets/FAQ/background.png";
 import smallBg from "../../assets/FAQ/background_small.png"
+import { useLocation } from "react-router-dom";
 
 const Faq = () => {
+  const location = useLocation();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
   return (
     <div>
       <div data-aos="fade-down" className="mt-20">

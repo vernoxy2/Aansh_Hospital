@@ -40,7 +40,7 @@ const faqs = [
 const Questions = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   const [openIndex, setOpenIndex] = useState(null);
 
   const handleToggle = (idx) => {

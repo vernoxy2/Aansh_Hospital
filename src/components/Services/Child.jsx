@@ -6,7 +6,7 @@ import doctor from "../../assets/services/doctor.png"; // Use your actual image 
 const Child = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div className="relative w-full bg-white overflow-hidden py-12 px-4 flex flex-col items-center min-h-[400px]">
       {/* Top Heading */}

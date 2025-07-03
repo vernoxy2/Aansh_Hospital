@@ -2,27 +2,30 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import headerHomeImg from "../../assets/headerHomeImg.png";
-import smallHomeImg from "../../assets/HeaderSmall.png";
+import smallHomeImg from "../../assets/HeaderSmall.png"
 import whoWeAreImg from "../../assets/baby.png";
 import OurService from "../../components/Home/OurService";
 import OurFacilities from "../../components/Home/OurFacilities";
 import WhyChooseUs from "../../components/Home/WhyChooseUs";
 import CuttingEdge from "../../components/Home/CuttingEdge";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
+  const location = useLocation();
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
+  useEffect(() => {
+    AOS.refresh();
+  }, [location]);
+
   return (
-    <div className="">
-      <div data-aos="fade-down" className="mt-20">
-        <img
-          src={smallHomeImg}
-          alt=""
-          className="block md:hidden w-full mx-auto"
-        />
-        <img src={headerHomeImg} alt="" className="hidden md:block w-full mx-auto" />
+    <div className="overflow-x-hidden">
+      <div data-aos="fade-down">
+        <img src={smallHomeImg} alt="" className="block md:hidden" />
+        <img src={headerHomeImg} alt="" className="hidden md:block" />
       </div>
       <div className="py-5">
         <div data-aos="fade-up">

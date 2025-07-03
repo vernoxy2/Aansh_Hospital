@@ -47,7 +47,7 @@ const services = [
 const OurService = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div>
       <div data-aos="fade-up">

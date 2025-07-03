@@ -1,11 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     container: {
       center: true,
@@ -32,7 +29,23 @@ export default {
         primary: "#A82682",
         secondary: "#A9A8A8",
       },
+      writingMode: {
+        vertical: "vertical-rl",
+      },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  variants: {
+    extend: {
+      writingMode: ["responsive"],
+    },
+  },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.writing-vertical': {
+          writingMode: 'vertical-rl',
+        },
+      }, ['responsive']);
+    },
+  ],
 };

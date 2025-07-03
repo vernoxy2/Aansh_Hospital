@@ -73,10 +73,10 @@ const basicFacilities = [
 const OurHospitalFacilities = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Advanced Facilities */}
       <div className="py-10 max-w-7xl mx-auto">
         <h2

@@ -36,7 +36,7 @@ const visionData = [
 const OurVision = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  }, []);
+  });
   return (
     <div className="relative w-full py-12 bg-white overflow-x-hidden">
       {/* Purple horizontal band */}
