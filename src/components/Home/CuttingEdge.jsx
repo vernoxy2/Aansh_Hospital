@@ -1,5 +1,6 @@
 import React from "react";
 import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 const stats = [
   {
@@ -25,8 +26,13 @@ const stats = [
 ];
 
 const CuttingEdge = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger once when it enters view
+    threshold: 0.3, // Percentage of component visible before triggering
+  });
+
   return (
-    <div className="my-10 w-full hidden xl:block">
+    <div ref={ref} className="my-10 w-full hidden xl:block">
       <h1 className="text-primary text-[40px] sm:text-[50px] md:text-[60px] font-bold font-kulim text-center">
         Cutting-edge pediatric care
       </h1>
@@ -41,12 +47,14 @@ const CuttingEdge = () => {
               <div className="h-[210px] w-[210px] border-[10px] border-primary rounded-full flex items-center justify-center">
                 <div className="h-[170px] w-[170px] bg-white rounded-full border border-gray-300 shadow-lg flex items-center justify-center">
                   <h2 className="text-primary text-[40px] sm:text-[50px] md:text-[60px] font-bold font-kulim">
-                    <CountUp
-                      end={item.value}
-                      duration={2.5}
-                      separator=","
-                      suffix={item.suffix}
-                    />
+                    {inView && (
+                      <CountUp
+                        end={item.value}
+                        duration={2.5}
+                        separator=","
+                        suffix={item.suffix}
+                      />
+                    )}
                   </h2>
                 </div>
               </div>
@@ -62,6 +70,7 @@ const CuttingEdge = () => {
 };
 
 export default CuttingEdge;
+
 
 
 /* 
