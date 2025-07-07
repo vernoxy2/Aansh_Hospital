@@ -49,22 +49,22 @@ const OurService = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div>
+    <div className="container py-10 space-y-8">
       <div data-aos="fade-up">
-        <h1 className="text-center text-2xl xl:text-6xl font-bold text-primary">
+        <h1 className="text-center text-4xl md:text-5xl xl:text-6xl font-bold text-primary">
           Our Services
         </h1>
       </div>
-      <section className="py-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="py-8 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((item, index) => (
             <div
               key={index}
-              className="bg-[#F6F4F4] rounded-xl text-center p-6 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col justify-between h-full"
+              className="bg-[#F6F4F4]/90 hover:bg-[#F6F1F9] rounded-xl text-center p-8 shadow-sm hover:shadow-lg transition-all duration-300 ease-in-out flex flex-col justify-between h-full"
               data-aos="fade-down"
             >
               {/* Fixed height text section */}
-              <div className="h-[180px] flex flex-col justify-start space-y-3">
+              <div className="h-[180px] flex flex-col justify-start space-y-3 px-10">
                 <h3 className="text-lg md:text-2xl font-bold leading-snug text-primary">
                   {item.title}
                 </h3>
@@ -74,7 +74,10 @@ const OurService = () => {
               </div>
 
               {/* Image section always positioned at bottom */}
-              <div className="mt-6 flex items-end justify-center" data-aos="fade-right">
+              <div
+                className="mt-6 flex items-end justify-center"
+                data-aos="fade-right"
+              >
                 <img
                   src={item.icon}
                   alt={item.title}
@@ -85,12 +88,11 @@ const OurService = () => {
           ))}
         </div>
       </section>
-      <div className="flex justify-center items-center" data-aos="fade-down-right">
+      <div className="flex justify-center items-center" data-aos="fade-up">
         <button className="bg-primary text-white xl:px-4 px-2 py-1 xl:py-2 xl:text-2xl font-bold rounded-xl">
           View More
         </button>
       </div>
-      <ContactHero />
     </div>
   );
 };

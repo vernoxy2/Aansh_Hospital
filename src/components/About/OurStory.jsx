@@ -8,33 +8,38 @@ const OurStory = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div className="w-full py-8 overflow-x-hidden">
-      <div className="container">
-        <div className="flex flex-col lg:flex-row justify-center lg:justify-between gap-8 xl:gap-40 2xl:gap-80 px-4 xl:px-40">
-          {/* Text first for left side on large screens */}
-          <div className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left" data-aos="fade-down">
-            <h1 className="text-primary text-2xl lg:text-4xl font-bold" >
+    <section className="py-12">
+      <div className="container space-y-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-14">
+          <div className="space-y-10">
+            <h1 className="text-4xl md:text-5xl xl:text-6xl font-bold text-primary">
               Compassionate Beginnings, Lifelong Care.
             </h1>
-            <p className="text-secondary font-semibold text-lg lg:text-xl">
+            <p className="text-secondary text-lg md:text-xl lg:text-2xl leading-relaxed">
               From a child’s first check-up to every milestone ahead, we provide
               gentle, expert care that grows with your family. Our clinic is
               built on trust, compassion, and a lifelong commitment to your
               child’s health and well-being.
             </p>
           </div>
-          {/* Image second for right side on large screens */}
-          <div className="flex-shrink-0 flex justify-center w-full lg:w-[824px] lg:h-[524px] max-w-full mb-8 lg:mb-0" data-aos="fade-left">
+          <div className="relative w-full h-auto">
+            {/* Background Image */}
             <img
               src={nurse}
-              alt="nurse"
-              className="w-full h-auto max-w-[824px] max-h-[524px] object-contain"
-              style={{ aspectRatio: "824/524" }}
+              alt="Nurse"
+              className="w-full h-full object-cover"
             />
+
+            {/* Overlay with Gradient and Text */}
+            <div className="absolute h-20 inset-0 bg-gradient-to-r from-[#A82682] via-[#A82682]/70 to-transparent flex items-center ">
+              <h1 className="text-white text-2xl md:text-4xl xl:text-5xl font-semibold ps-5">
+                Our Story / History
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

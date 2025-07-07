@@ -40,27 +40,27 @@ const OurVision = () => {
   return (
     <div className="relative w-full py-12 bg-white overflow-x-hidden">
       {/* Purple horizontal band */}
-      <div className="absolute top-1/2 left-0 w-full h-48 bg-[#B05BA6] opacity-30 -translate-y-1/2 z-0"></div>
+      <div className="absolute top-1/2 left-0 w-full h-72 bg-gradient-to-l from-[#A82682] to-transparent -translate-y-1/2 z-0"></div>
       <div className="relative z-10 container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-start justify-center gap-8">
+        <div className="flex flex-col lg:flex-row items-start justify-center gap-5">
           {visionData.map((item) => (
             <div
               key={item.id}
               className="flex-1 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center max-w-xl mx-auto"
               data-aos="fade-up-right"
             >
-              <h2 className="text-[#A82682] text-2xl md:text-4xl font-bold mb-4 text-center">
+              <h2 className="text-[#A82682] text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
                 {item.title}
               </h2>
               <div className="w-full flex justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-xl w-full h-[260px] object-contain"
+                  className="rounded-xl w-full p-4 object-contain"
                 />
               </div>
               <div className="pt-8 pb-4 px-2">
-                <p className="text-[#A3A3A3] text-base md:text-lg text-center font-medium leading-relaxed">
+                <p className="text-[#A3A3A3] text-base md:text-lg lg:text-2xl text-center font-medium leading-relaxed">
                   {item.description}
                 </p>
               </div>

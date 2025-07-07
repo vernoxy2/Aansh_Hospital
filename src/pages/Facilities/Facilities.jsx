@@ -17,7 +17,7 @@ const Facilities = () => {
     AOS.refresh();
   }, [location]);
   return (
-    <div>
+    <div className="overflow-hidden">
       <div data-aos="fade-down" className="mt-20">
         <img
           src={smallHero}

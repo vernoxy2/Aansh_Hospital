@@ -34,14 +34,14 @@ const Caring = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div className="w-full py-12 px-4">
+    <div className="w-full py-12 ">
       <h2
-        className="text-primary text-2xl md:text-4xl lg:text-5xl font-bold text-center mb-12"
+        className="text-primary text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-12"
         data-aos="fade-up"
       >
         Caring Beyond Treatment.
       </h2>
-      <div className="flex flex-col md:flex-row items-center justify-center gap-20">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-20">
         {caringData.map((item) => (
           <div
             key={item.id}

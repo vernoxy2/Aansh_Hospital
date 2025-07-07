@@ -44,27 +44,27 @@ const WhyChooseUs = () => {
   });
   return (
     <section>
-      <div className="flex flex-col xl:flex-row items-center justify-center xl:gap-24 xl:pl-48 xl:py-8">
-        <div className="" data-aos="zoom-in">
-          <h1 className="text-2xl xl:text-6xl font-bold text-primary text-center xl:text-left xl:-mt-6">
+      <div className="container flex flex-col xl:flex-row items-center justify-between py-8">
+        {/* Heading Section */}
+        <div data-aos="zoom-in" className="text-center xl:text-left">
+          <h1 className="text-3xl sm:text-4xl xl:text-6xl font-bold text-primary">
             Why Choose Us
           </h1>
         </div>
-        <div
-          className="hidden xl:block"
-          data-aos="flip-up"
-        >
-          <img src={image} alt="Why Choose Us" className="w-full" />
+
+        {/* Image Section (hidden on small screens) */}
+        <div className="hidden xl:block" data-aos="flip-up">
+          <img src={image} alt="Why Choose Us" className="w-full max-w-md" />
         </div>
       </div>
+      <div className="container"> 
 
-      <div>
-        <div className="px-4 py-10 md:px-20">
+        <div className="">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col"
+                className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col  p-5"
                 data-aos="flip-left"
               >
                 <div className="relative">
@@ -74,7 +74,7 @@ const WhyChooseUs = () => {
                     className="w-full h-48 object-contain"
                   />
                 </div>
-                <div className="pt-10 px-4 pb-4 text-left">
+                <div className=" text-left">
                   <h3 className="text-2xl font-bold text-primary mb-2">
                     {item.title}
                   </h3>

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+import Bg from "../../assets/facilitiesBg.svg";
+
 import img1 from "../../assets/facilities/Mask_group.png";
 import img2 from "../../assets/facilities/Mask_group_(1).png";
 import img3 from "../../assets/facilities/Mask_group_(2).png";
@@ -13,6 +15,7 @@ import parkingImg from "../../assets/facilities/parking.png";
 import pharmaImg from "../../assets/facilities/pharma.png";
 import ambulanceImg from "../../assets/facilities/ambulance_(2).png";
 
+// Facilities Data Array
 const facilities = [
   {
     title: "Spacious 15 bedded NICU For Sick Newborns",
@@ -45,7 +48,7 @@ const facilities = [
     image: img6,
   },
 ];
-
+// Basic Facilities Data Array
 const basicFacilities = [
   {
     title: "Parking Facility",
@@ -76,23 +79,23 @@ const OurHospitalFacilities = () => {
   });
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden relative">
       {/* Advanced Facilities */}
-      <div className="py-10 max-w-7xl mx-auto">
+      <div className="py-10 container z-10">
         <h2
-          className="text-center text-3xl md:text-5xl font-bold text-primary mb-10"
+          className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-16 z-10"
           data-aos="zoom-in"
         >
           Explore Our Hospital Facilities
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {facilities.map((facility, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-lg p-5 flex flex-col transition duration-300 hover:bg-primary group cursor-pointer space-y-8"
+              className="bg-white rounded-xl shadow-lg p-5  flex flex-col transition duration-300 hover:bg-primary group cursor-pointer space-y-8 z-10"
               data-aos="flip-up"
             >
-              <div>
+              <div className="pe-10">
                 <h3 className="font-bold text-lg md:text-xl mb-2 text-primary group-hover:text-white transition duration-300">
                   {facility.title}
                 </h3>
@@ -108,12 +111,13 @@ const OurHospitalFacilities = () => {
             </div>
           ))}
         </div>
+        <img src={Bg} alt="" className="absolute -top-10 left-0 w-full z-0" />
       </div>
 
       {/* Basic Facilities */}
-      <div className="py-10 max-w-7xl mx-auto">
+      <div className="py-10 container">
         <h2
-          className="text-center text-3xl md:text-5xl font-bold text-fuchsia-700 mb-10"
+          className="text-center text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-10"
           data-aos="zoom-in"
         >
           Our Facilities
@@ -122,23 +126,21 @@ const OurHospitalFacilities = () => {
           {basicFacilities.map((facility, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-lg flex flex-col items-center transition duration-300 group cursor-pointer"
+              className="bg-white rounded-xl shadow-lg flex flex-col items-center md:items-start transition duration-300 group cursor-pointer overflow-hidden hover:bg-primary/10"
               data-aos="flip-down"
             >
               <img
                 src={facility.icon}
                 alt={facility.iconAlt}
-                className="w-72 h-72 object-contain"
+                className="w-full object-contain group-hover:scale-105 transition duration-500"
               />
-              <div className="p-5">
+              <div className="px-12 py-8">
                 <h3
-                  className={`font-bold text-lg md:text-xl mb-2 text-center ${facility.color}`}
+                  className={`font-bold text-lg md:text-xl lg:text-3xl mb-2 text-center md:text-left text-primary`}
                 >
                   {facility.title}
                 </h3>
-                <p className="text-sm mb-4 text-center">
-                  {facility.desc}
-                </p>
+                <p className="text-sm md:text-base lg:text-lg mb-4 text-secondary text-center md:text-left">{facility.desc}</p>
               </div>
             </div>
           ))}
@@ -147,13 +149,13 @@ const OurHospitalFacilities = () => {
 
       {/* Highlight Banner */}
       <div
-        className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
+        className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 "
         data-aos="fade-up"
       >
-        <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
-          Our hospital ensures convenience and safety with well-organized parking,
-          a fully-stocked in-house pharmacy, and 24/7 ambulance service — all
-          designed to support patients, visitors, and staff efficiently.
+        <p className="text-center text-white text-base md:text-xl lg:text-2xl font-semibold container w-2/3 lg:w-3/5">
+          Our hospital ensures convenience and safety with well-organized
+          parking, a fully-stocked in-house pharmacy, and 24/7 ambulance service
+          — all designed to support patients, visitors, and staff efficiently.
         </p>
       </div>
     </div>

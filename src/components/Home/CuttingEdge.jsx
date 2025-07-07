@@ -33,11 +33,11 @@ const CuttingEdge = () => {
 
   return (
     <div ref={ref} className="my-10 w-full hidden xl:block">
-      <h1 className="text-primary text-[40px] sm:text-[50px] md:text-[60px] font-bold font-kulim text-center">
+      <h1 className="text-primary text-3xl sm:text-4xl xl:text-6xl font-bold font-kulim text-center">
         Cutting-edge pediatric care
       </h1>
 
-      <div className="w-full h-[300px] bg-primary flex flex-row items-center justify-center gap-6 sm:gap-12 md:gap-24 mt-44 px-4">
+      <div className="w-full h-[300px] bg-primary flex flex-row items-center justify-center gap-6 sm:gap-12 md:gap-24 mt-44">
         {stats.map((item, idx) => (
           <div
             key={idx}

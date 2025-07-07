@@ -13,14 +13,8 @@ export default {
         xl: "5rem",
         "2xl": "6rem",
       },
-      screens: {
-        sm: "640px",
-        md: "768px",
-        lg: "1024px",
-        xl: "1280px",
-        "2xl": "1536px",
-      },
     },
+
     extend: {
       fontFamily: {
         kulim: ['"Kulim Park"', "sans-serif"],
@@ -34,11 +28,13 @@ export default {
       },
     },
   },
+
   variants: {
     extend: {
       writingMode: ["responsive"],
     },
   },
+
   plugins: [
     function ({ addUtilities }) {
       addUtilities(

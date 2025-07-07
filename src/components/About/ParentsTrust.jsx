@@ -9,8 +9,8 @@ const ParentsTrust = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div  className="overflow-x-hidden">
-      <div className="w-full flex flex-col lg:flex-row items-center justify-center py-12 px-4 lg:px-20">
+    <div  className="overflow-x-hidden container">
+      <div className="w-full flex flex-col lg:flex-row items-center justify-center py-12 ">
         {/* Heart-shaped image */}
         <div
           className="flex-shrink-0 flex justify-center w-full lg:w-1/2 mb-8 lg:mb-0"
@@ -24,7 +24,7 @@ const ParentsTrust = () => {
         </div>
         {/* Text content */}
         <div
-          className="flex-1 flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-2"
+          className="flex-1 flex flex-col items-center lg:items-end justify-center text-center lg:text-end gap-y-5"
           data-aos="fade-left"
         >
           <h2 className="text-[#A82682] text-2xl md:text-4xl lg:text-5xl font-bold mb-4">
@@ -42,7 +42,7 @@ const ParentsTrust = () => {
       </div>
 
       <div>
-        <img src={staff} alt="" data-aos="zoom-in" />
+        <img src={staff} alt="" data-aos="zoom-in" className="w-full pointer-events-none" />
         <div
           className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
           data-aos="zoom-in-up"

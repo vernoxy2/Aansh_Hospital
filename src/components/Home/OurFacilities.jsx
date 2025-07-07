@@ -5,7 +5,7 @@ import image1 from "../../assets/facilitiesSectionImg1.png";
 import image2 from "../../assets/facilitiesSectionImg2.jpg";
 import image3 from "../../assets/facilitiesSectionImg3.png";
 
-const programs = [
+const facilities = [
   {
     title: "Pediatric OPD",
     desc: "Compassionate care for children with expert pediatricians in a bright, cheerful, child-friendly environment.",
@@ -26,43 +26,49 @@ const programs = [
 const OurFacilities = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  });
-  return (
-    <div>
-      <div data-aos="zoom-in">
-        <h1 className="text-center text-2xl xl:text-6xl font-bold text-primary">
-          Our Facilities
-        </h1>
-      </div>
+  }, []); // ✅ only run once on mount
 
-      <section className="py-10  max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {programs.map((item, index) => (
+  return (
+    <section className=" bg-white">
+      <div className="container space-y-12">
+        {/* Title */}
+        <div data-aos="zoom-in">
+          <h2 className="text-center text-4xl md:text-5xl xl:text-6xl font-bold text-primary">
+            Our Facilities
+          </h2>
+        </div>
+
+        {/* Facilities Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {facilities.map((item, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-2xl shadow-md group "
+              className="relative overflow-hidden rounded-2xl shadow-lg group"
               data-aos="flip-right"
             >
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[450px] object-cover rounded-2xl"
+                className="w-full object-cover rounded-2xl transform group-hover:scale-105 transition duration-500 ease-in-out"
               />
-              <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary via-primary/90 to-transparent p-4 text-white">
-                <h3 className="text-2xl font-bold">{item.title}</h3>
-                <p className="text-base mt-1">{item.desc}</p>
+              <div className="absolute mr-20 inset-x-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <div className="backdrop-blur-md bg-primary/60 p-4 text-white">
+                  <h3 className="text-xl font-bold">{item.title}</h3>
+                  <p className="text-sm mt-1">{item.desc}</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="flex justify-center mt-10" data-aos="fade-down-right">
-          <button className="bg-primary text-white xl:px-4 px-2 py-1 xl:py-2 xl:text-2xl font-bold rounded-xl">
+        {/* View More Button */}
+        <div className="flex justify-center" data-aos="fade-up">
+          <button className="bg-primary text-white text-base xl:text-xl font-semibold px-6 py-3 rounded-xl hover:bg-fuchsia-700 transition-all">
             View More
           </button>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 
