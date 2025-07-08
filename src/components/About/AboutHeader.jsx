@@ -13,7 +13,7 @@ const AboutHeader = () => {
       {/* Optional Text/CTA Section */}
       <div className="absolute container sm:mb-20 inset-0 flex items-center justify-start ">
         <div className="space-y-1 md:space-y-5">
-          <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-start text-SecondPrimary leading-tight">
+          <h1 className="font-bold text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-start text-SecondPrimary leading-tight">
             About Us
           </h1>
         </div>

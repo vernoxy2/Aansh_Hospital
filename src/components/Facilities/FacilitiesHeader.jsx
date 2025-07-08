@@ -1,24 +1,25 @@
 import React from "react";
-import HeaderHomeImg1 from "../../assets/headerServicesImg.png";
+import HeaderFacilitiesImg1 from "../../assets/headerFacilitiesImg.png";
 import HeaderLower from "../../assets/HeaderLower.svg";
 import { IoCalendar } from "react-icons/io5";
 import { IoMdContact } from "react-icons/io";
 
-const ServicesHeader = () => {
+const FacilitiesHeader = () => {
   return (
     <section
       className="relative mt-[90px] md:mt-24 px-0 w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[780px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${HeaderHomeImg1})` }}
+      style={{ backgroundImage: `url(${HeaderFacilitiesImg1})` }}
     >
       {/* Optional Text/CTA Section */}
       <div className="absolute container sm:mb-20 inset-0 flex items-center justify-start ">
         <div className="space-y-1 md:space-y-5">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-start text-SecondPrimary leading-tight">
-            Services
+            Facilities
           </h1>
-          <p className="font-semibold text-[10px] lg:text-xl text-primary w-1/2 lg:w-2/3">
-            Explore our full range of pediatric services designed for every
-            stage of your child’s growth.
+          <p className="font-semibold text-[10px] lg:text-xl text-primary w-1/2 lg:w-2/5">
+            Bright, child-friendly hospital corridor with cartoon walls, clear
+            signage for Pediatrics, NICU, Surgery, and Vaccination in a warm
+            setting.
           </p>
         </div>
       </div>
@@ -63,4 +64,4 @@ const ServicesHeader = () => {
   );
 };
 
-export default ServicesHeader;
+export default FacilitiesHeader;

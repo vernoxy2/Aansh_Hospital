@@ -79,7 +79,7 @@ const OurHospitalFacilities = () => {
   });
 
   return (
-    <div className="overflow-x-hidden relative">
+    <div className="overflow-hidden relative">
       {/* Advanced Facilities */}
       <div className="py-10 container z-10">
         <h2
