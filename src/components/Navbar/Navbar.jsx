@@ -78,7 +78,11 @@ const Navbar = () => {
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
         <div className="container flex justify-between items-center min-h-[90px] md:min-h-[120px]">
           <Link to="/">
-            <img src={logo} alt="Logo" className="h-16 md:h-20 xl:h-28 w-auto" />
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-16 md:h-20 xl:h-28 w-auto"
+            />
           </Link>
 
           {!isMobile && (
@@ -124,7 +128,10 @@ const Navbar = () => {
                   autoFocus
                   className="flex-1 outline-none bg-transparent text-primary px-2"
                 />
-                <button onClick={() => setShowSearch(false)} aria-label="Close Search">
+                <button
+                  onClick={() => setShowSearch(false)}
+                  aria-label="Close Search"
+                >
                   <FaTimes className="text-xl text-primary hover:text-[#c51162]" />
                 </button>
               </div>
@@ -137,7 +144,9 @@ const Navbar = () => {
                 aria-label="Call"
               >
                 <FaPhoneAlt />
-                <span className="hidden md:inline ml-2 font-bold">{phoneNumber}</span>
+                <span className="hidden md:inline ml-2 font-bold">
+                  {phoneNumber}
+                </span>
               </a>
             )}
 
@@ -169,7 +178,9 @@ const Navbar = () => {
                 to={to}
                 className={({ isActive }) =>
                   `py-2 text-base ${
-                    isActive ? "text-[#e2b598] font-medium" : "hover:text-blue-300"
+                    isActive
+                      ? "text-[#e2b598] font-medium"
+                      : "hover:text-blue-300"
                   }`
                 }
                 onClick={() => {
@@ -184,10 +195,10 @@ const Navbar = () => {
         )}
       </nav>
 
-      <div className="fixed bottom-2 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
+      <div className="fixed bottom-1 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
         <a
           href={`tel:${phoneNumber}`}
-          className="bg-[#CD895C] text-white sm:rounded-r-xl xl:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
+          className="bg-[#CD895C] text-white rounded-t-xl sm:rounded-tl-none sm:rounded-r-xl  shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
         >
           <span className="font-bold text-xs sm:text-sm md:rotate-180 md:writing-vertical mb-0">
             Emergency
@@ -199,7 +210,7 @@ const Navbar = () => {
 
         <a
           href="mailto:drashishgamit9@gmail.com"
-          className="bg-[#CD895C] text-white sm:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
+          className="bg-[#CD895C] text-white rounded-t-xl sm:rounded-tl-none sm:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
         >
           <span className="font-bold text-xs sm:text-sm md:rotate-180 md:writing-vertical mb-0">
             Enquire Now
@@ -213,7 +224,7 @@ const Navbar = () => {
       <button
         onClick={() => setShowAppointmentModal(true)}
         aria-label="Book an appointment"
-        className="fixed bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center gap-2 px-4 md:px-5 py-4 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
+        className="fixed bottom-3 sm:bottom-6 md:bottom-8 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center gap-2 px-4 md:px-5 py-4 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
       >
         <FaCalendarPlus className="text-xl" />
         <span className="hidden sm:inline">Book an appointment</span>

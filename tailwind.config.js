@@ -22,6 +22,7 @@ export default {
       colors: {
         primary: "#A82682",
         secondary: "#A9A8A8",
+        SecondPrimary: "#CD895C",
       },
       writingMode: {
         vertical: "vertical-rl",
