@@ -19,7 +19,7 @@ const Faq = () => {
   }, [location]);
   return (
     <div>
-      <div data-aos="fade-down" className="mt-20">
+      <div data-aos="fade-down" className="mt-20 md:mt-24">
         <img src={smallBg} alt="" className="block md:hidden w-full mx-auto"/>
         <img src={bg} alt="" className="hidden md:block w-full mx-auto"/>
       </div>

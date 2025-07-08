@@ -8,24 +8,25 @@ const ContactForm = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div data-aos="fade-down">
-      <section
-        className="bg-cover bg-no-repeat bg-center py-10 px-4"
-        style={{ backgroundImage: `url(${bg})` }}
-      >
-        <div className="max-w-5xl mx-auto  rounded-xl p-6 space-y-4">
-          <form className="space-y-4">
+    <section
+      className="bg-cover bg-no-repeat bg-center py-10 "
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      <div data-aos="fade-down" className="container">
+        <div className=" mx-auto  rounded-xl p-3 md:p-6 space-y-5">
+            <form className="space-y-4 placeholder-primary text-primary">
+
             {/* Row 1: Full Width */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <input
                 type="text"
                 placeholder="Your Name*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <input
                 type="text"
                 placeholder="Last Name*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -34,12 +35,12 @@ const ContactForm = () => {
               <input
                 type="email"
                 placeholder="Email Address*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <input
                 type="tel"
                 placeholder="Phone Number*"
-                className="w-full px-4 py-3 rounded-lg border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -48,7 +49,7 @@ const ContactForm = () => {
               <input
                 type="text"
                 placeholder="Subject*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
             <div>
@@ -56,7 +57,7 @@ const ContactForm = () => {
                 type="text"
                 placeholder="Your Message Here*"
                 rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder-primary rounded-lg border resize-none focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -69,8 +70,8 @@ const ContactForm = () => {
             </button>
           </form>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

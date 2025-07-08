@@ -18,7 +18,7 @@ const Facilities = () => {
   }, [location]);
   return (
     <div className="overflow-hidden">
-      <div data-aos="fade-down" className="mt-20">
+      <div data-aos="fade-down" className="mt-20 md:mt-24">
         <img
           src={smallHero}
           alt=""

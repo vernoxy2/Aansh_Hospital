@@ -23,7 +23,7 @@ const Home = () => {
 
   return (
     <div className="overflow-hidden">
-      <div data-aos="fade-down" className="mt-20 ">
+      <div data-aos="fade-down" className="mt-20 md:mt-28 ">
         <img src={smallHomeImg} alt="" className="block md:hidden" />
         <img src={headerHomeImg} alt="" className="hidden md:block" />
       </div>

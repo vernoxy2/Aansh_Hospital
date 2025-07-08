@@ -13,17 +13,17 @@ const UploadResume = () => {
         Upload Your Resume
       </h2>
       <section
-        className="bg-cover bg-no-repeat bg-center py-10 px-4"
+        className="bg-cover bg-no-repeat bg-center py-10 "
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <div className="max-w-5xl mx-auto  rounded-xl p-6 space-y-4">
+        <div className="max-w-5xl mx-auto container rounded-xl p-6 space-y-4">
           <form className="space-y-4">
             {/* Row 1: Full Width */}
             <div>
               <input
                 type="text"
                 placeholder="Your Name*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder:text-primary rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -32,12 +32,12 @@ const UploadResume = () => {
               <input
                 type="email"
                 placeholder="Email Address*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder:text-primary rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <input
                 type="text"
                 placeholder="Location*"
-                className="w-full px-4 py-3 rounded-lg border border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-3 md:text-xl placeholder:text-primary rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 
@@ -46,12 +46,12 @@ const UploadResume = () => {
               <input
                 type="tel"
                 placeholder="Mobile Number*"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder:text-primary rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <input
                 type="text"
                 placeholder="Department *"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                className="w-full px-4 py-3 md:text-xl placeholder:text-primary rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
               />
             </div>
 

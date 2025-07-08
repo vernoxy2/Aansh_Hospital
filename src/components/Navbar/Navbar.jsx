@@ -1,4 +1,3 @@
-// At the top (React, Router, and Icons)
 import { useState, useRef, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -68,15 +67,7 @@ const Navbar = () => {
   }, [showSearch]);
 
   useEffect(() => {
-    if (showAppointmentModal) {
-      // Lock scroll
-      document.body.style.overflow = "hidden";
-    } else {
-      // Restore scroll
-      document.body.style.overflow = "auto";
-    }
-
-    // Clean up on unmount (just in case)
+    document.body.style.overflow = showAppointmentModal ? "hidden" : "auto";
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -84,13 +75,12 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
-        <div className="container flex justify-between items-center  min-h-[90px] md:min-h-[120px]">
-          {/* Logo */}
-          <Link to="/"><img src={logo} alt="Logo" className="h-16 md:h-20 xl:h-28 w-auto" /></Link>
+        <div className="container flex justify-between items-center min-h-[90px] md:min-h-[120px]">
+          <Link to="/">
+            <img src={logo} alt="Logo" className="h-16 md:h-20 xl:h-28 w-auto" />
+          </Link>
 
-          {/* Desktop Nav Links */}
           {!isMobile && (
             <div className="hidden xl:flex flex-1 justify-center">
               <div className="flex items-center bg-[#A82682] rounded-lg px-4 py-2 gap-x-4">
@@ -114,9 +104,7 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Right Buttons */}
           <div className="flex items-center gap-2 ml-auto">
-            {/* Search Toggle */}
             {!showSearch ? (
               <button
                 className="border-2 border-primary text-primary bg-white rounded-md w-10 h-10 hover:bg-primary/20 transition"
@@ -128,7 +116,7 @@ const Navbar = () => {
             ) : (
               <div
                 ref={searchRef}
-                className="flex items-center border-2 border-primary rounded-md bg-white px-2 h-10 w-32 xs:w-40 md:w-64"
+                className="flex items-center justify-between border-2 border-primary rounded-md bg-white px-2 h-10 w-40 md:w-60"
               >
                 <input
                   type="text"
@@ -136,33 +124,27 @@ const Navbar = () => {
                   autoFocus
                   className="flex-1 outline-none bg-transparent text-primary px-2"
                 />
-                <button
-                  onClick={() => setShowSearch(false)}
-                  aria-label="Close Search"
-                >
+                <button onClick={() => setShowSearch(false)} aria-label="Close Search">
                   <FaTimes className="text-xl text-primary hover:text-[#c51162]" />
                 </button>
               </div>
             )}
 
-            {/* Call Button */}
-            <a
-              href={`tel:${phoneNumber}`}
-              className="border-2 border-primary text-primary bg-white rounded-md w-10 h-10 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
-              aria-label="Call"
-            >
-              <FaPhoneAlt />
-              <span className="hidden md:inline ml-2 font-bold">
-                {phoneNumber}
-              </span>
-            </a>
+            {!showSearch && (
+              <a
+                href={`tel:${phoneNumber}`}
+                className="border-2 border-primary text-primary bg-white rounded-md w-10 h-10 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
+                aria-label="Call"
+              >
+                <FaPhoneAlt />
+                <span className="hidden md:inline ml-2 font-bold">{phoneNumber}</span>
+              </a>
+            )}
 
-            {/* Get Started (desktop only) */}
             <button className="hidden md:inline-flex items-center bg-primary text-white font-bold rounded-md px-5 h-10 ml-1 hover:bg-[#c51162] transition">
               Get Started
             </button>
 
-            {/* Mobile Menu Toggle */}
             {isMobile && !showSearch && (
               <button
                 ref={buttonRef}
@@ -176,7 +158,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Dropdown Menu */}
         {isMobile && isOpen && (
           <div
             ref={menuRef}
@@ -203,9 +184,7 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Sticky Side Buttons */}
-      <div className="fixed bottom-2 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto md:laft-0 z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
-        {/* Emergency Button */}
+      <div className="fixed bottom-2 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
         <a
           href={`tel:${phoneNumber}`}
           className="bg-[#CD895C] text-white sm:rounded-r-xl xl:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
@@ -218,7 +197,6 @@ const Navbar = () => {
           </div>
         </a>
 
-        {/* Enquire Now Button */}
         <a
           href="mailto:drashishgamit9@gmail.com"
           className="bg-[#CD895C] text-white sm:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
@@ -232,7 +210,6 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Book Appointment Button */}
       <button
         onClick={() => setShowAppointmentModal(true)}
         aria-label="Book an appointment"
@@ -242,7 +219,6 @@ const Navbar = () => {
         <span className="hidden sm:inline">Book an appointment</span>
       </button>
 
-      {/* Modal */}
       {showAppointmentModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
           <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md relative">

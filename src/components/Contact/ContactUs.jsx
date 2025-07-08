@@ -4,25 +4,30 @@ import "aos/dist/aos.css";
 import ContactForm from "./ContactForm";
 
 const ContactUs = () => {
-    useEffect(() => {
-      AOS.init({ duration: 1000, once: true });
-    });
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <div className="overflow-x-hidden">
-      <div className="flex flex-col md:flex-row items-center justify-center xl:gap-40 py-10 px-2 md:px-8">
+    <section className="py-16 relative">
+      <div className="container flex flex-col lg:flex-row gap-12 lg:gap-20 px-4">
         {/* Contact Card */}
-        <div className="bg-white shadow-lg border-2  p-8 max-w-md w-full mb-6 md:mb-0" data-aos="fade-right">
-          <h2 className="text-3xl font-bold text-primary mb-2 font-primary">
+        <div
+          className="w-full lg:w-5/12 bg-white p-6 md:p-10 space-y-4 md:space-y-6 shadow-2xl "
+          data-aos="zoom-in"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-primary font-primary">
             Need Any Help?
           </h2>
-          <p className="text-gray-500 mb-6 font-secondary">
+          <p className="text-secondary md:text-2xl font-semibold">
             We're Just a Message Away – Let's Talk!
           </p>
-          <div className="flex items-start gap-4 mb-4">
-            <div className="bg-primary text-white rounded-full p-3 flex items-center justify-center">
-              {/* Phone Icon */}
+
+          {/* Phone */}
+          <div className="flex items-start gap-4">
+            <div className="bg-primary text-white rounded-full p-4 flex items-center justify-center">
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7 md:w-9 md:h-9"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -35,18 +40,17 @@ const ContactUs = () => {
                 />
               </svg>
             </div>
-            <div>
+            <div className="text-base md:text-xl">
               <div className="font-bold text-primary">Call Us</div>
-              <div className="text-secondary text-sm sm:text-base">
-                08735019584
-              </div>
+              <div className="text-secondary font-semibold">08735019584</div>
             </div>
           </div>
-          <div className="flex items-start gap-4 mb-4">
-            <div className="bg-primary text-white rounded-full p-3 flex items-center justify-center">
-              {/* Email Icon */}
+
+          {/* Email */}
+          <div className="flex items-start gap-4">
+            <div className="bg-primary text-white rounded-full p-4 flex items-center justify-center">
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7 md:w-9 md:h-9"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -59,21 +63,22 @@ const ContactUs = () => {
                 />
               </svg>
             </div>
-            <div>
+            <div className="text-base md:text-xl">
               <div className="font-bold text-primary">Email</div>
               <a
                 href="mailto:drashishgamit9@gmail.com"
-                className=" underline text-secondary break-all text-sm sm:text-base"
+                className="text-secondary font-semibold"
               >
                 drashishgamit9@gmail.com
               </a>
             </div>
           </div>
+
+          {/* Address */}
           <div className="flex items-start gap-4">
-            <div className="bg-primary text-white rounded-full p-3 flex items-center justify-center">
-              {/* Location Icon */}
+            <div className="bg-primary text-white rounded-full p-4 flex items-center justify-center">
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7 md:w-9 md:h-9"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -91,34 +96,39 @@ const ContactUs = () => {
                 />
               </svg>
             </div>
-            <div>
+            <div className="text-base md:text-xl">
               <div className="font-bold text-primary">Address</div>
-              <div className="text-secondary text-sm sm:text-base">
-                Aansh Children's Hospital
-                <br />
+              <div className="text-secondary font-semibold">
+                Aansh Children's Hospital,
+                <br className="hidden md:block" />
                 beside Yes Bank, Kapadia Chal,
-                <br />
+                <br className="hidden md:block" />
                 Valsad, Gujarat 396001
               </div>
             </div>
           </div>
         </div>
+
         {/* Google Map */}
-        <div className="w-full max-w-3xl h-80 rounded-xl shadow-lg overflow-hidden border border-gray-200" data-aos="fade-left">
-          <iframe
-            title="Aansh Children's Hospital Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.123456789!2d72.9281234!3d20.6101234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zMjDCsDM2JzM2LjQiTiA3MsKwNTUnNDIuNSJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <div className="w-full lg:w-7/12" data-aos="fade-up">
+          <div className="w-full h-[400px] md:h-full shadow-lg overflow-hidden border border-gray-200">
+            <iframe
+              title="Aansh Children's Hospital Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.578720412138!2d72.92973169999999!3d20.6052549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0c30014421883%3A0xeddbb051a6a1fb30!2sAansh%20children's%20Hospital!5e0!3m2!1sen!2sin!4v1751946939555!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
-      <ContactForm />
-    </div>
+
+      {/* Decorative Gradient Bar */}
+      <div className="bg-gradient-to-l from-primary to-white h-[90px] absolute bottom-10 w-4/12 left-0 -z-10"></div>
+    </section>
   );
 };
 

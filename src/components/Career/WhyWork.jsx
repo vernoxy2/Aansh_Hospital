@@ -56,7 +56,7 @@ const WhyWork = () => {
           className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
           data-aos="fade-left"
         >
-          <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
+          <p className="text-center text-white text-sm sm:text-base md:text-lg lg:text-2xl font-semibold max-w-4xl mx-auto">
             We're committed to creating an environment where both our team and
             the children we serve can thrive and reach their full potential.
           </p>
@@ -78,7 +78,7 @@ const WhyWork = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2 font-primary text-primary transition duration-300">
+                  <h3 className="font-bold text-xl mb-2 font-primary text-primary transition duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-secondary text-sm font-secondary transition duration-300">
@@ -104,7 +104,7 @@ const WhyWork = () => {
           className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"
           data-aos="fade-left"
         >
-          <p className="text-center text-white text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto">
+          <p className="text-center text-white text-sm sm:text-base md:text-lg lg:text-2xl font-semibold max-w-4xl mx-auto">
             We're committed to creating an environment where both our team and
             the children we serve can thrive and reach their full potential.
           </p>

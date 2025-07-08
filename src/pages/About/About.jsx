@@ -23,7 +23,7 @@ const About = () => {
   }, [location]);
   return (
     <div>
-      <div data-aos="fade-down" className="mt-20">
+      <div data-aos="fade-down" className="mt-20 md:mt-24">
         <img
           src={smallHeader}
           alt=""

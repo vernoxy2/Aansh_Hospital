@@ -49,56 +49,35 @@ const Footer = () => {
       className="relative bg-no-repeat bg-top pt-20 bg-[length:170%_300px] xl:bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 text-sm text-gray-600">
+      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-5 gap-8 text-sm text-gray-600">
         {/* Logo + Info */}
-        <div className="md:col-span-1 space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <div className="space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
           <img src={logo} alt="Aansh Logo" className="mx-auto lg:mx-0" />
           <p className="font-semibold text-base text-secondary">
             Aansh Children's Hospital offers trusted, compassionate care for
             women and children with expert doctors, innovation, and easy
             appointment booking.
           </p>
-          <button className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary" onClick={() => setShowAppointmentModal(true)}>
-            <span>📅</span> Book an Appointment
-            <span className="ml-auto">➔</span>
+          <button
+            className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary"
+            onClick={() => setShowAppointmentModal(true)}
+          >
+            <span>📅</span> Book an Appointment <span className="ml-auto">➔</span>
           </button>
         </div>
 
-        {/* Footer Dropdowns for small screens and default for large */}
+        {/* Footer Links */}
         {footerLinks.map((section, index) => (
-          <div key={index} className="text-left w-full">
+          <div key={index} className="w-full">
             {/* Mobile Dropdown */}
-            {/* <div className="lg:hidden">
-              <button
-                onClick={() => toggleDropdown(index)}
-                className="w-full text-left font-bold text-xl text-primary"
-              >
-                {section.heading}
-              </button>
-              {openIndex === index && (
-                <ul className="pl-4 space-y-1">
-                  {section.links.map((link, i) => (
-                    <li
-                      key={i}
-                      className="text-secondary font-semibold cursor-pointer"
-                    >
-                      {link}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div> */}
-
             <div className="lg:hidden flex items-center justify-between w-full">
               <button
                 onClick={() => toggleDropdown(index)}
-                className="w-full text-left font-bold text-xl text-primary flex items-center justify-between border-b-2 border-primary"
+                className="w-full text-left font-bold text-2xl text-primary flex items-center justify-between border-b-2 border-primary pb-1"
               >
                 {section.heading}
                 <svg
-                  className={`w-6 h-6 ml-2 transition-transform duration-200 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
+                  className={`w-6 h-6 ml-2 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""}`}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
@@ -113,7 +92,7 @@ const Footer = () => {
               </button>
             </div>
             {openIndex === index && (
-              <ul className="pl-4 space-y-1">
+              <ul className="pl-2 mt-2 space-y-1 lg:hidden">
                 {section.links.map((link, i) => (
                   <li
                     key={i}
@@ -145,7 +124,7 @@ const Footer = () => {
         ))}
 
         {/* Location & Contact */}
-        <div className="text-left w-full">
+        <div className="w-full">
           <div className="lg:hidden">
             <h3 className="font-bold text-xl text-primary mb-2">Location</h3>
             <p className="font-bold text-base text-secondary">
@@ -156,7 +135,7 @@ const Footer = () => {
           </div>
 
           <div className="hidden lg:block">
-            <h3 className="font-bold text-2xl text-primary mb-2">Locations</h3>
+            <h3 className="font-bold text-2xl text-primary mb-2">Location</h3>
             <p className="font-bold text-base text-secondary">
               JW4H+4V2, beside Yes Bank, Kapadia Chal, Valsad, Gujarat 396001
             </p>
@@ -166,7 +145,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Heart Line */}
+      {/* Heart Divider */}
       <div className="xl:-mt-24 -mt-8">
         <img src={heart} alt="Heart Line" className="ml-auto" />
       </div>

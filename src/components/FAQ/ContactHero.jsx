@@ -10,12 +10,12 @@ const ContactHero = () => {
   });
   return (
     <div
-      className="container  flex flex-col lg:flex-row items-center justify-between px-4 md:px-16 py-10"
+      className="container  flex flex-col lg:flex-row items-center justify-between  py-10"
       //min-h-[320px]
       data-aos="fade-up"
     >
       {/* Left Content */}
-      <div className="flex-1 flex flex-col justify-center items-start max-w-xl">
+      <div className=" flex-1 flex flex-col justify-center ">
         <div className="flex items-center mb-4">
           <span className="inline-block w-36 h-7 bg-primary  rounded-r-lg mr-[-5px]"></span>
           <h2 className="text-3xl md:text-4xl font-bold text-primary ml-2">
@@ -37,7 +37,7 @@ const ContactHero = () => {
         <img
           src={bg}
           alt="Contact Phone"
-          className="w-full max-w-xxl object-contain hidden lg:block"
+          className=" h-full object-contain hidden lg:block"
           //   style={{ minWidth: 220 }}
         />
       </div>
