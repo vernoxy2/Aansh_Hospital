@@ -11,12 +11,12 @@ const ServicesHeader = () => {
       style={{ backgroundImage: `url(${HeaderHomeImg1})` }}
     >
       {/* Optional Text/CTA Section */}
-      <div className="absolute container sm:mb-20 inset-0 flex items-center justify-start ">
+      <div className="absolute container 2xl:px-0 sm:mb-20 inset-0 flex items-center justify-start ">
         <div className="space-y-1 md:space-y-5">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-start text-SecondPrimary leading-tight">
             Services
           </h1>
-          <p className="font-semibold text-[10px] lg:text-xl text-primary w-1/2 lg:w-2/3">
+          <p className="font-semibold leading-tight text-[9px] lg:text-xl text-primary w-1/2 lg:w-2/3">
             Explore our full range of pediatric services designed for every
             stage of your child’s growth.
           </p>

@@ -1,21 +1,26 @@
 import React from "react";
-import HeaderHomeImg1 from "../../assets/headerAboutImg.png";
+import headerCareerImg from "../../assets/headerCareerImg.png";
 import HeaderLower from "../../assets/HeaderLower.svg";
 import { IoCalendar } from "react-icons/io5";
 import { IoMdContact } from "react-icons/io";
 
-const AboutHeader = () => {
+const CareerHeader = () => {
   return (
     <section
       className="relative mt-[90px] md:mt-24 px-0 w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[780px] bg-cover bg-center"
-      style={{ backgroundImage: `url(${HeaderHomeImg1})` }}
+      style={{ backgroundImage: `url(${headerCareerImg})` }}
     >
       {/* Optional Text/CTA Section */}
       <div className="absolute container 2xl:px-0 sm:mb-20 inset-0 flex items-center justify-start ">
         <div className="space-y-1 md:space-y-5">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-start text-SecondPrimary leading-tight">
-            About Us
+            Career
           </h1>
+          <p className="font-semibold leading-tight text-[9px] lg:text-xl text-primary w-1/2 lg:w-2/5">
+            Join our dedicated pediatric team to make a difference, grow
+            professionally, and provide compassionate care in a supportive
+            hospital environment.
+          </p>
         </div>
       </div>
 
@@ -59,4 +64,4 @@ const AboutHeader = () => {
   );
 };
 
-export default AboutHeader;
+export default CareerHeader;

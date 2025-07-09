@@ -11,17 +11,17 @@ const HomeHeader = () => {
       style={{ backgroundImage: `url(${HeaderHomeImg})` }}
     >
       {/* Optional Text/CTA Section */}
-      <div className="absolute container sm:mb-40 inset-0 flex items-center justify-end ">
-        <div className="space-y-1 md:space-y-5">
-          <h1 className="text-lg sm:text-2xl md:text-4xl lg:text-6xl text-end text-SecondPrimary leading-tight">
+      <div className="absolute container 2xl:px-0 sm:mb-24 lg:mb-40 inset-0 flex items-center justify-end ">
+        <div className="space-y-1 xl:space-y-5">
+          <h1 className="text-lg sm:text-3xl lg:text-4xl xl:text-6xl text-end text-SecondPrimary leading-tight">
             Comprehensive Newborn <br />
-            <span className="font-bold text-3xl sm:text-8xl">Care</span>
+            <span className="font-bold text-3xl sm:text-4xl xl:text-8xl">Care</span>
           </h1>
           <div className="flex gap-1 md:gap-2 justify-end items-center">
-            <h1 className="text-3xl lg:text-[85px] my-auto font-semibold sm:font-bold text-primary">
+            <h1 className="text-3xl sm:text-4xl xl:text-[85px] my-auto font-semibold sm:font-bold text-primary">
               20
             </h1>
-            <p className="bg-primary text-white p-1 md:p-4 text-sm sm:text-4xl font-light ">
+            <p className="bg-primary text-white p-1 xl:p-4 text-sm sm:text-lg xl:text-4xl font-light ">
               Years Experience
             </p>
           </div>
