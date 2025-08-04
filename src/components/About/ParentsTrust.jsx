@@ -10,7 +10,7 @@ const ParentsTrust = () => {
   });
   return (
     <div  className="overflow-hidden ">
-      <div className="container w-full flex flex-col lg:flex-row items-center justify-center py-12 ">
+      <div className="container w-full flex flex-col lg:flex-row items-center justify-center py-8 md:py-16 space-y-4 md:space-y-10 ">
         {/* Heart-shaped image */}
         <div
           className=" flex-shrink-0 flex justify-center w-full lg:w-1/2 mb-8 lg:mb-0"
@@ -41,7 +41,7 @@ const ParentsTrust = () => {
         </div>
       </div>
 
-      <div className="container 2xl:px-0 w-full flex flex-col items-center justify-center py-12">
+      <div className="container 2xl:px-0 w-full flex flex-col items-center justify-center py-8 md:py-16 space-y-0">
         <img src={staff} alt="" data-aos="zoom-in" className="w-full pointer-events-none" />
         <div
           className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"

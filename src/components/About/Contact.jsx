@@ -3,7 +3,7 @@ import telephone from "../../assets/about/telephone.png"
 
 const Contact = () => {
   return (
-    <div className="relative w-full bg-white overflow-hidden py-16 px-4 flex items-center justify-center min-h-[400px]">
+    <div className="relative w-full bg-white overflow-hidden py-8 md:py-16 px-4 flex items-center justify-center min-h-[400px]">
       {/* Main content and image */}
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto">
         {/* Left: Text content */}
