@@ -41,50 +41,50 @@ const features = [
 const WhyChooseUs = () => {
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
-  });
+  }, []); // ✅ run only once on mount
+
   return (
-    <section>
-      <div className="container flex flex-col xl:flex-row items-center justify-between py-8">
-        {/* Heading Section */}
+    <section className="py-10 md:py-16 space-y-10 mb-10 bg-white">
+      <div className="container flex flex-col xl:flex-row items-center justify-between">
+        {/* Heading */}
         <div data-aos="zoom-in" className="text-center xl:text-left">
           <h1 className="text-3xl sm:text-4xl xl:text-6xl font-bold text-primary">
             Why Choose Us
           </h1>
         </div>
 
-        {/* Image Section (hidden on small screens) */}
+        {/* Decorative Line Image */}
         <div className="hidden xl:block" data-aos="flip-up">
           <img src={image} alt="Why Choose Us" className="w-full max-w-md" />
         </div>
       </div>
-      <div className="container"> 
 
-        <div className="">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((item, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col  p-5"
-                data-aos="flip-left"
-              >
-                <div className="relative">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-48 object-contain"
-                  />
-                </div>
-                <div className=" text-left">
-                  <h3 className="text-2xl font-bold text-primary mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-base font-semibold text-secondary">
-                    {item.description}
-                  </p>
-                </div>
+      {/* Features Grid */}
+      <div className="container">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden flex flex-col p-5 transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
+              data-aos="flip-left"
+            >
+              <div className="relative">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-48 object-contain"
+                />
               </div>
-            ))}
-          </div>
+              <div className="text-left mt-4">
+                <h3 className="text-xl font-bold text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-secondary font-medium">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

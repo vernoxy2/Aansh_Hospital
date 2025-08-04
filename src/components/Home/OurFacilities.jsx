@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import image1 from "../../assets/facilitiesSectionImg1.png";
 import image2 from "../../assets/facilitiesSectionImg2.jpg";
 import image3 from "../../assets/facilitiesSectionImg3.png";
+import { Link } from "react-router-dom";
 
 const facilities = [
   {
@@ -62,10 +63,14 @@ const OurFacilities = () => {
         </div>
 
         {/* View More Button */}
-        <div className="flex justify-center" data-aos="fade-up">
-          <button className="bg-primary text-white text-base xl:text-xl font-semibold px-6 py-3 rounded-xl hover:bg-fuchsia-700 transition-all">
+        <div className="flex justify-center mt-6" data-aos="fade-up">
+          <Link
+            to="/facilities"
+            onClick={() => window.scrollTo(0, 0)}
+            className="bg-primary text-white text-base xl:text-xl font-semibold px-6 py-3 rounded-lg hover:bg-fuchsia-700 transition-all"
+          >
             View More
-          </button>
+          </Link>
         </div>
       </div>
     </section>

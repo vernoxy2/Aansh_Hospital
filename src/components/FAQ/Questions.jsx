@@ -1,7 +1,6 @@
 import React, { useEffect, useState, } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import bg from "../../assets/FAQ/Mask_group(1).png";
 
 const faqs = [
   {
