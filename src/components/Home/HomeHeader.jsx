@@ -7,11 +7,11 @@ import { IoMdContact } from "react-icons/io";
 const HomeHeader = () => {
   return (
     <section
-      className="relative mt-[90px] md:mt-24 px-0 w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[780px] bg-cover bg-center"
+      className="relative mt-[63px] md:mt-[80px] w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[650px] bg-cover bg-center"
       style={{ backgroundImage: `url(${HeaderHomeImg})` }}
     >
       {/* Optional Text/CTA Section */}
-      <div className="absolute container 2xl:px-0 sm:mb-24 lg:mb-40 inset-0 flex items-center justify-end ">
+      <div className="absolute container sm:mb-24 lg:mb-40 inset-0 flex items-center justify-end ">
         <div className="space-y-1 xl:space-y-5">
           <h1 className="text-lg sm:text-3xl lg:text-4xl xl:text-6xl text-end text-SecondPrimary leading-tight">
             Comprehensive Newborn <br />
@@ -29,7 +29,7 @@ const HomeHeader = () => {
       </div>
 
       {/* Decorative Bottom Overlay */}
-      <div className=" hidden md:block absolute bottom-0 right-0 bg-SecondPrimary py-2 sm:py-4 xl:py-5 w-3/5 xl:w-[1099px] ">
+      <div className="container hidden md:block absolute bottom-0 right-0 bg-SecondPrimary py-2 sm:py-4 xl:py-5 w-3/5 xl:w-[1099px] ">
         <div className="grid grid-cols-3 xl:gap-x-3 xl:w-4/5 pb-2 sm:pb-5 xl:pb-12">
           <div className="text-white text-xs xl:text-xl text-right felx flex-col items-end  ">
             <IoCalendar className="text-xl xl:text-4xl ml-auto sm:mb-1" />
@@ -62,7 +62,7 @@ const HomeHeader = () => {
       <img
         src={HeaderLower}
         alt="Lower Decoration"
-        className="absolute -bottom-1.5 sm:-bottom-3 xl:-bottom-8 w-full left-0  pointer-events-none"
+        className="absolute -bottom-1.5 sm:-bottom-3 xl:-bottom-6 w-full left-0  pointer-events-none"
       />
     </section>
   );

@@ -41,13 +41,13 @@ const OurVision = () => {
     <div className="relative w-full py-12 bg-white overflow-x-hidden">
       {/* Purple horizontal band */}
       <div className="absolute top-1/2 left-0 w-full h-72 bg-gradient-to-l from-[#A82682] to-transparent -translate-y-1/2 z-0"></div>
-      <div className="relative z-10 container mx-auto px-4">
+      <div className="relative z-10 container mx-auto ">
         <div className="flex flex-col lg:flex-row items-start justify-center gap-5">
           {visionData.map((item) => (
             <div
               key={item.id}
               className="flex-1 bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center max-w-xl mx-auto"
-              data-aos="fade-up-right"
+              data-aos="fade-right"
             >
               <h2 className="text-[#A82682] text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-center">
                 {item.title}

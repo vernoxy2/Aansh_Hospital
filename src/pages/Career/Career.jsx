@@ -23,7 +23,7 @@ const Career = () => {
   return (
     <div className="overflow-hidden">
       {/* Career Header Section */}
-      <div data-aos="fade-down" className="mt-20 md:mt-24">
+      <div data-aos="fade-down" className="">
         <CareerHeader />
       </div>
 

@@ -24,7 +24,7 @@ const Faq = () => {
   return (
     <div className="overflow-hidden">
       {/* Header Section */}
-      <div data-aos="fade-down" className="mt-20 md:mt-24">
+      <div data-aos="fade-down" className="">
         <FaqHeader />
       </div>
 

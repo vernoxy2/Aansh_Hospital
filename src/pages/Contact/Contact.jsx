@@ -24,7 +24,7 @@ const Contact = () => {
   return (
     <div className="overflow-hidden">
       {/* Header */}
-      <div data-aos="fade-down" className="mt-20 md:mt-24">
+      <div data-aos="fade-down" className="">
         <ContactHeader />
       </div>
 

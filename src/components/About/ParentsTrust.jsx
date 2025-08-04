@@ -9,7 +9,7 @@ const ParentsTrust = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div  className="overflow-x-hidden container">
+    <div  className="overflow-hidden container">
       <div className="w-full flex flex-col lg:flex-row items-center justify-center py-12 ">
         {/* Heart-shaped image */}
         <div
@@ -19,7 +19,7 @@ const ParentsTrust = () => {
           <img
             src={familyHeart}
             alt="Why parents trust us"
-            className="w-full max-w-lg h-auto"
+            className="w-full h-auto"
           />
         </div>
         {/* Text content */}

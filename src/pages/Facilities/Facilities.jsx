@@ -21,7 +21,7 @@ const Facilities = () => {
   }, [location]);
 
   return (
-    <div className="overflow-hidden">
+    <div data-aos="fade-down"  className="overflow-hidden">
       {/* Header/Hero Section */}
       <FacilitiesHeader />
 

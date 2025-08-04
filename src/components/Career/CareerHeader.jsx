@@ -7,11 +7,11 @@ import { IoMdContact } from "react-icons/io";
 const CareerHeader = () => {
   return (
     <section
-      className="relative mt-[90px] md:mt-24 px-0 w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[780px] bg-cover bg-center"
+      className="relative mt-[63px] md:mt-[80px] px-0 w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[650px] bg-cover bg-center"
       style={{ backgroundImage: `url(${headerCareerImg})` }}
     >
       {/* Optional Text/CTA Section */}
-      <div className="absolute container 2xl:px-0 sm:mb-20 inset-0 flex items-center justify-start ">
+      <div className="absolute container sm:mb-20 inset-0 flex items-center justify-start ">
         <div className="space-y-1 md:space-y-5">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-6xl xl:text-8xl text-start text-SecondPrimary leading-tight">
             Career
@@ -58,7 +58,7 @@ const CareerHeader = () => {
       <img
         src={HeaderLower}
         alt="Lower Decoration"
-        className="absolute -bottom-1.5 sm:-bottom-3 xl:-bottom-8 w-full left-0  pointer-events-none"
+        className="absolute -bottom-1.5 sm:-bottom-3 xl:-bottom-6 w-full left-0  pointer-events-none"
       />
     </section>
   );

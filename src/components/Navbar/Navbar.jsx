@@ -76,18 +76,18 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
-        <div className="container flex justify-between items-center min-h-[90px] md:min-h-[120px]">
+        <div className="container lg:px-0 2xl:px-6 flex justify-between items-center ">
           <Link to="/">
             <img
               src={logo}
               alt="Logo"
-              className="h-16 md:h-20 xl:h-28 w-auto"
+              className="h-16 md:h-20 xl:h-20 w-auto"
             />
           </Link>
 
           {!isMobile && (
             <div className="hidden xl:flex flex-1 justify-center">
-              <div className="flex items-center bg-[#A82682] rounded-lg px-4 py-2 gap-x-4">
+              <div className="flex items-center bg-[#A82682] rounded-lg px-3 py-2 gap-x-1 2xl:gap-x-2">
                 {navLinks.map(({ to, label }) => (
                   <NavLink
                     key={to}
@@ -111,16 +111,16 @@ const Navbar = () => {
           <div className="flex items-center gap-2 ml-auto">
             {!showSearch ? (
               <button
-                className="border-2 border-primary text-primary bg-white rounded-md w-10 h-10 hover:bg-primary/20 transition"
+                className="border-2 border-primary text-primary bg-white rounded-md w-9 h-9 hover:bg-primary/20 transition"
                 aria-label="Search"
                 onClick={() => setShowSearch(true)}
               >
-                <FaSearch className="text-xl mx-auto" />
+                <FaSearch className="text-lg mx-auto" />
               </button>
             ) : (
               <div
                 ref={searchRef}
-                className="flex items-center justify-between border-2 border-primary rounded-md bg-white px-2 h-10 w-40 md:w-60"
+                className="flex items-center justify-between border-2 border-primary rounded-md bg-white px-1 h-10 w-40 md:w-60"
               >
                 <input
                   type="text"
@@ -140,7 +140,7 @@ const Navbar = () => {
             {!showSearch && (
               <a
                 href={`tel:${phoneNumber}`}
-                className="border-2 border-primary text-primary bg-white rounded-md w-10 h-10 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
+                className="border-2 border-primary text-primary bg-white rounded-md w-9 h-9 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
                 aria-label="Call"
               >
                 <FaPhoneAlt />

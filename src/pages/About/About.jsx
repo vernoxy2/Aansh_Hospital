@@ -25,7 +25,7 @@ const About = () => {
 
   return (
     <div className="overflow-hidden">
-      <section className="sm:py-5 space-y-12 xl:space-y-20">
+      <section data-aos="fade-down" className="md:space-y-4 xl:space-y-12">
         <AboutHeader />
         <div data-aos="fade-up">
           <AboutDoctor />
