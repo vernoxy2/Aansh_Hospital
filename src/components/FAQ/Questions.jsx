@@ -48,7 +48,7 @@ const Questions = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row gap-8 py-10 px-2 md:px-10 container mx-auto">
+    <div className=" flex flex-col md:flex-row gap-8 py-10 container mx-auto">
       {/* Left Side: FAQ Intro and Card */}
       <div className="flex-1 flex flex-col gap-8">
         <div>

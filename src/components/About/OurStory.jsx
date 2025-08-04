@@ -31,8 +31,8 @@ const OurStory = () => {
             />
 
             {/* Overlay with Gradient and Text */}
-            <div className="absolute h-20 inset-0 bg-gradient-to-r from-[#A82682] via-[#A82682]/70 to-transparent flex items-center ">
-              <h1 className="text-white text-2xl md:text-4xl xl:text-5xl font-semibold ps-5">
+            <div className="absolute h-9 md:h-20 inset-0 bg-gradient-to-r from-[#A82682] via-[#A82682]/70 to-transparent flex items-center ">
+              <h1 className="text-white  md:text-4xl xl:text-5xl font-semibold ps-5">
                 Our Story / History
               </h1>
             </div>
