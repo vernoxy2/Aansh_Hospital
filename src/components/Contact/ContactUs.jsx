@@ -10,10 +10,10 @@ const ContactUs = () => {
 
   return (
     <section className="py-16 relative">
-      <div className="container flex flex-col lg:flex-row gap-12 lg:gap-20 ">
+      <div className="container flex flex-col xl:flex-row gap-12 lg:gap-20 ">
         {/* Contact Card */}
         <div
-          className="w-full lg:w-5/12 bg-white p-6 md:p-10 space-y-4 md:space-y-6 shadow-2xl "
+          className="w-full xl:w-5/12 bg-white p-6 md:p-10 space-y-4 md:space-y-6 shadow-2xl "
           data-aos="zoom-in"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-primary font-primary">
@@ -110,7 +110,7 @@ const ContactUs = () => {
         </div>
 
         {/* Google Map */}
-        <div className="w-full lg:w-7/12" data-aos="fade-up">
+        <div className="w-full xl:w-7/12" data-aos="fade-up">
           <div className="w-full h-[400px] md:h-full shadow-lg overflow-hidden border border-gray-200">
             <iframe
               title="Aansh Children's Hospital Location"

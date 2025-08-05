@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useLocation, Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -8,7 +9,6 @@ import icon3 from "../../assets/servicesSectionImg3.png";
 import icon4 from "../../assets/servicesSectionImg4.png";
 import icon5 from "../../assets/servicesSectionImg5.png";
 import icon6 from "../../assets/servicesSectionImg6.png";
-import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -44,9 +44,14 @@ const services = [
 ];
 
 const OurService = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const visibleServices = isHomePage ? services.slice(0, 3) : services;
 
   return (
     <div className="py-8 md:py-16 space-y-4 md:space-y-10">
@@ -59,13 +64,12 @@ const OurService = () => {
 
       <section className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {services.map((item, index) => (
+          {visibleServices.map((item, index) => (
             <div
               key={index}
               className="bg-[#F6F4F4]/90 hover:bg-[#F6F1F9] rounded-xl shadow-sm hover:shadow-lg transition duration-300 flex flex-col justify-between p-6 sm:p-8 text-center"
               data-aos="fade-up"
             >
-              {/* Text Section */}
               <div className="flex flex-col gap-3 mb-4 lg:p-1">
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
                   {item.title}
@@ -74,8 +78,6 @@ const OurService = () => {
                   {item.desc}
                 </p>
               </div>
-
-              {/* Image Section */}
               <div className="flex justify-center mt-auto pt-4">
                 <img
                   src={item.icon}
@@ -88,12 +90,14 @@ const OurService = () => {
         </div>
       </section>
 
-      {/* View More Button */}
-      <div className="flex justify-center mt-10" data-aos="fade-up">
-        <button className="bg-primary text-white px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg font-semibold rounded-lg shadow hover:shadow-md transition">
-         <Link to="/services">View More</Link>
-        </button>
-      </div>
+      {/* Show "View More" only on home page */}
+      {isHomePage && (
+        <div className="flex justify-center mt-10" data-aos="fade-up">
+          <button className="bg-primary text-white px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg font-semibold rounded-lg shadow hover:shadow-md transition">
+            <Link to="/services">View More</Link>
+          </button>
+        </div>
+      )}
     </div>
   );
 };

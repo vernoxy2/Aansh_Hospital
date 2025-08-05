@@ -34,7 +34,7 @@ const Caring = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div className="w-full py-8 md:py-16 space-y-4 md:space-y-10">
+    <div className="w-full py-8 md:py-16 space-y-4 md:space-y-10 container">
       <h2
         className="text-primary text-3xl md:text-5xl lg:text-6xl font-bold text-center mb-12"
         data-aos="fade-up"

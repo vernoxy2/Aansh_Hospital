@@ -9,6 +9,7 @@ import img3 from "../../assets/career/Group3.png";
 import img4 from "../../assets/career/Group4.png";
 import img5 from "../../assets/career/Group5.png";
 
+// Features Data Array
 const features = [
   {
     title: "State-of-the-Art Facilities",
@@ -44,7 +45,7 @@ const WhyWork = () => {
 
   return (
     <div className="overflow-x-hidden">
-      <div className="py-10 mx-auto">
+      <div className="py-8 md:py-16 space-y-4 md:space-y-10 ">
         <h2
           className="text-center text-3xl md:text-5xl font-bold text-primary mb-4 font-primary"
           data-aos="fade-up"
@@ -63,7 +64,7 @@ const WhyWork = () => {
         </div>
 
         <div className="max-w-7xl mx-auto py-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 container">
             {features.map((feature, idx) => (
               <div
                 key={idx}
@@ -78,7 +79,7 @@ const WhyWork = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-2 font-primary text-primary transition duration-300">
+                  <h3 className="font-bold text-lg mb-2 font-primary text-primary transition duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-secondary text-sm font-secondary transition duration-300">

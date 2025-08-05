@@ -88,39 +88,52 @@ const Position = () => {
   });
   return (
     <div className="w-full">
-      <div className="max-w-5xl mx-auto mt-12 mb-12"  data-aos="flip-up">
+      <div
+        className="container max-w-5xl mx-auto mt-12 mb-12"
+        data-aos="flip-up"
+      >
         <div className="border-2 border-primary rounded-2xl overflow-hidden">
-          <div className="bg-primary text-white font-bold text-lg grid grid-cols-2 sm:grid-cols-5 px-4 py-3">
-            <div className="col-span-1 sm:col-span-2">Position</div>
-            <div className="hidden sm:block">Department</div>
-            <div className="hidden md:block">Type</div>
-            <div className="col-span-1">Location</div>
-            <div className="col-span-1">Action</div>
+          {/* Header Row */}
+          <div className="bg-primary text-white text-center font-bold text-lg grid grid-cols-6 px-4 py-3">
+            <div className="col-span-2">Position</div>
+            <div className="col-span-1 hidden sm:block">Department</div>
+            <div className="col-span-1 hidden sm:block">Type</div>
+            <div className="col-span-1 hidden sm:block">Location</div>
+            <div className="col-span-1 hidden sm:block">Action</div>
           </div>
+
+          {/* Position Rows */}
           <div>
             {positions.map((pos, idx) => (
               <div
                 key={idx}
-                className="bg-white flex flex-col sm:flex-row items-center sm:items-stretch justify-between gap-4 border-b last:border-b-0 border-primary px-4 py-3 transition hover:shadow-lg"
+                className="grid grid-cols-6 items-center border-b last:border-b-0 border-primary px-4 py-4 hover:bg-primary/10 transition text-primary"
               >
-                <div className="flex items-center gap-3 flex-1 min-w-0">
+                {/* Position */}
+                <div className="col-span-2 flex items-center gap-3">
                   <div className="shrink-0">{pos.icon}</div>
                   <div>
-                    <div className="font-bold text-primary text-base sm:text-lg">
+                    <div className="font-bold text-base sm:text-lg">
                       {pos.title}
                     </div>
                     <div className="text-xs text-secondary">{pos.subtitle}</div>
                   </div>
                 </div>
-                <div className="hidden sm:flex items-center justify-center flex-1 text-primary">
+
+                {/* Department */}
+                <div className="col-span-1 hidden sm:flex justify-center">
                   {pos.department}
                 </div>
-                <div className="hidden md:flex items-center justify-center flex-1 text-primary">
+
+                {/* Type */}
+                <div className="col-span-1 hidden sm:flex justify-center">
                   {pos.type}
                 </div>
-                <div className="flex items-center justify-center flex-1 gap-1 text-primary">
+
+                {/* Location */}
+                <div className="col-span-1 hidden sm:flex items-center justify-center gap-1">
                   <svg
-                    className="w-5 h-5 text-primary"
+                    className="w-5 h-5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >
@@ -128,8 +141,10 @@ const Position = () => {
                   </svg>
                   <span>{pos.location}</span>
                 </div>
-                <div className="flex items-center justify-center flex-1">
-                  <button className="bg-primary text-white font-bold px-4 py-2 rounded-lg hover:bg-fuchsia-800 transition text-sm">
+
+                {/* Action */}
+                <div className="col-span-1 hidden sm:flex justify-center">
+                  <button className="bg-primary text-white font-bold px-2 md:px-4 py-2 rounded-lg hover:bg-fuchsia-800 transition text-sm">
                     Apply Now
                   </button>
                 </div>
