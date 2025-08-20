@@ -54,8 +54,8 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Decorative Line Image */}
-        <div className="hidden xl:block" data-aos="flip-up">
-          <img src={image} alt="Why Choose Us" className="w-full max-w-md" />
+        <div className="hidden xl:block " data-aos="flip-up">
+          <img src={image} alt="Why Choose Us" className="w-full  max-w-md" />
         </div>
       </div>
 

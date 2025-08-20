@@ -32,7 +32,7 @@ const CuttingEdge = () => {
   });
 
   return (
-    <div ref={ref} className="my-10 w-full hidden xl:block">
+    <div ref={ref} className="my-10  w-full hidden xl:block">
       <h1 className="text-primary text-3xl sm:text-4xl xl:text-6xl font-bold font-kulim text-center">
         Cutting-edge pediatric care
       </h1>

@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 // import bg from "../../assets/FAQ/Mask_group(1).png";
 import bg from "../../assets/FAQ/Mask_group.png";
+import { Link } from "react-router-dom";
 
 const ContactHero = () => {
   useEffect(() => {
@@ -10,12 +11,12 @@ const ContactHero = () => {
   });
   return (
     <div
-      className="container  flex flex-col lg:flex-row items-center justify-between  py-10"
+      className="container px-0 flex flex-col lg:flex-row items-center justify-between  py-10"
       //min-h-[320px]
       data-aos="fade-up"
     >
       {/* Left Content */}
-      <div className=" flex-1 flex flex-col justify-center ">
+      <div className="container flex-1 flex flex-col justify-center ">
         <div className="flex items-center mb-4">
           <span className="inline-block w-36 h-7 bg-primary  rounded-r-lg mr-[-5px]"></span>
           <h2 className="text-3xl md:text-4xl font-bold text-primary ml-2">
@@ -28,9 +29,10 @@ const ContactHero = () => {
           or need assistance, know that we’re more than just a healthcare
           provider – we’re your dedicated companions.
         </p>
-        <button className="bg-primary text-white font-bold px-8 py-3 rounded-lg hover:bg-primary/80 transition text-lg font-primary shadow">
+        <Link onClick={() => window.scrollTo(0, 0)} to={"/contact"}>
+        <button  className="bg-primary text-white font-bold px-8 py-3 rounded-lg hover:bg-primary/80 transition text-lg font-primary shadow">
           Get a Quote
-        </button>
+        </button></Link>
       </div>
       {/* Right Image */}
       <div className="flex-1 flex justify-right items-right mt-8 md:mt-0">

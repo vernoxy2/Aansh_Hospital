@@ -7,6 +7,7 @@ import { useLocation } from "react-router-dom";
 import ServicesHeader from "../../components/Services/ServicesHeader";
 import Child from "../../components/Services/Child";
 import OurService from "../../components/Home/OurService";
+import ContactHero from "../../components/FAQ/ContactHero";
 
 const Services = () => {
   const location = useLocation();
@@ -34,6 +35,9 @@ const Services = () => {
 
         <div data-aos="fade-up">
           <OurService />
+        </div>
+        <div data-aos="fade-up">
+          <ContactHero />
         </div>
       </section>
     </div>
