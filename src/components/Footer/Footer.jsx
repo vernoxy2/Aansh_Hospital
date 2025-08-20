@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // ✅ Import Link
 import logo from "../../assets/logo.png";
 import heart from "../../assets/footer_lower.webp";
 import bg from "../../assets/footer_bg.webp";
@@ -8,31 +9,34 @@ const footerLinks = [
   {
     heading: "About Us",
     links: [
-      "Mission, Vision & Values",
-      "Our Story",
-      "Our Team",
-      "Our Doctors",
-      "Why choose us",
-      "Celebrity Testimonials",
-      "Contact Us",
+      { label: "Mission, Vision & Values", to: "/mission" },
+      { label: "Our Story", to: "/our-story" },
+      { label: "Our Team", to: "/team" },
+      { label: "Our Doctors", to: "/doctors" },
+      { label: "Why choose us", to: "/why-choose-us" },
+      { label: "Celebrity Testimonials", to: "/testimonials" },
+      { label: "Contact Us", to: "/contact" },
     ],
   },
   {
     heading: "Our Services",
     links: [
-      "Our Facilities",
-      "Department of Paediatrics",
-      "Department of Neonatology",
-      "Department of Paediatric Intensive Care",
-      "Paediatric Super Specialities",
-      "Department of Obstetrics",
-      "Department of Gynaecology",
-      "Department of IVF",
+      { label: "Our Facilities", to: "/facilities" },
+      { label: "Department of Paediatrics", to: "/paediatrics" },
+      { label: "Department of Neonatology", to: "/neonatology" },
+      { label: "Department of Paediatric Intensive Care", to: "/picu" },
+      { label: "Paediatric Super Specialities", to: "/super-specialities" },
+      { label: "Department of Obstetrics", to: "/obstetrics" },
+      { label: "Department of Gynaecology", to: "/gynaecology" },
+      { label: "Department of IVF", to: "/ivf" },
     ],
   },
   {
     heading: "Resources",
-    links: ["Testimonials", "FAQs", "Career"],
+    links: [
+      { label: "Career", to: "/career" },
+      { label: "FAQs", to: "/faq" },
+    ],
   },
 ];
 
@@ -50,6 +54,7 @@ const Footer = () => {
       style={{ backgroundImage: `url(${bg})` }}
     >
       <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-5 gap-8 text-sm text-gray-600">
+        
         {/* Logo + Info */}
         <div className="space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
           <img src={logo} alt="Aansh Logo" className="mx-auto lg:mx-0" />
@@ -62,13 +67,15 @@ const Footer = () => {
             className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary"
             onClick={() => setShowAppointmentModal(true)}
           >
-            <span>📅</span> Book an Appointment <span className="ml-auto">➔</span>
+            <span>📅</span> Book an Appointment{" "}
+            <span className="ml-auto">➔</span>
           </button>
         </div>
 
         {/* Footer Links */}
         {footerLinks.map((section, index) => (
           <div key={index} className="w-full">
+            
             {/* Mobile Dropdown */}
             <div className="lg:hidden flex items-center justify-between w-full">
               <button
@@ -77,28 +84,29 @@ const Footer = () => {
               >
                 {section.heading}
                 <svg
-                  className={`w-6 h-6 ml-2 transition-transform duration-200 ${openIndex === index ? "rotate-180" : ""}`}
+                  className={`w-6 h-6 ml-2 transition-transform duration-200 ${
+                    openIndex === index ? "rotate-180" : ""
+                  }`}
                   fill="none"
                   stroke="currentColor"
                   strokeWidth={2}
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
             </div>
+            
             {openIndex === index && (
               <ul className="pl-2 mt-2 space-y-1 lg:hidden">
                 {section.links.map((link, i) => (
-                  <li
-                    key={i}
-                    className="text-secondary font-semibold cursor-pointer"
-                  >
-                    {link}
+                  <li key={i}>
+                    <Link
+                      to={link.to}
+                      className="text-secondary font-semibold hover:text-primary"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -111,11 +119,13 @@ const Footer = () => {
               </h3>
               <ul className="space-y-1">
                 {section.links.map((link, i) => (
-                  <li
-                    key={i}
-                    className="hover:text-primary text-secondary font-bold text-base cursor-pointer"
-                  >
-                    {link}
+                  <li key={i}>
+                    <Link
+                      to={link.to}
+                      className="hover:text-primary text-secondary font-bold text-base cursor-pointer"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

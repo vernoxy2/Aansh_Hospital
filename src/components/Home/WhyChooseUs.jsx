@@ -44,7 +44,7 @@ const WhyChooseUs = () => {
   }, []); // ✅ run only once on mount
 
   return (
-    <section className="py-10 md:py-16 space-y-10 mb-10 bg-white">
+    <section id="why-choose-us" className="py-10 md:py-16 space-y-10 mb-10 bg-white">
       <div className="container flex flex-col xl:flex-row items-center justify-between">
         {/* Heading */}
         <div data-aos="zoom-in" className="text-center xl:text-left">

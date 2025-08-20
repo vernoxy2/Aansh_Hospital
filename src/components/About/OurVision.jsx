@@ -38,7 +38,7 @@ const OurVision = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <div className="relative py-8 md:py-16 space-y-4 md:space-y-10 overflow-x-hidden">
+    <div id="vision" className="relative py-8 md:py-16 space-y-4 md:space-y-10 overflow-x-hidden">
       {/* Purple horizontal band */}
       <div className="absolute top-1/2 left-0 w-full h-72 bg-gradient-to-l from-[#A82682] to-transparent -translate-y-1/2 z-0"></div>
       <div className="relative z-10 container mx-auto ">
