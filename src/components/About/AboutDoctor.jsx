@@ -8,7 +8,7 @@ const AboutDoctor = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <section id="doctors" className="py-8 md:py-16 space-y-4 md:space-y-10">
+    <section id="doctors" className="py-8 md:py-16 space-y-4 md:space-y-10 scroll-mt-24">
       <div className="container space-y-10">
         <h1 className="text-center text-4xl md:text-5xl xl:text-6xl font-bold text-primary">
           About Our Doctor

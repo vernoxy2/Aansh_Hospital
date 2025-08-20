@@ -8,7 +8,7 @@ const OurStory = () => {
     AOS.init({ duration: 1000, once: true });
   });
   return (
-    <section id="our-story" className="py-8 md:py-16 space-y-4 md:space-y-10">
+    <section id="our-story" className="py-8 md:py-16 space-y-4 md:space-y-10 scroll-mt-24">
       <div className="container space-y-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-y-14">
           <div className="space-y-10">

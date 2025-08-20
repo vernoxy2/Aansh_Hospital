@@ -23,6 +23,17 @@ const About = () => {
     AOS.refresh();
   }, [location]);
 
+  // Scroll to in-page anchor when hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace(/^#/, "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <div className="overflow-hidden">
       <section data-aos="fade-down" className="md:space-y-4 xl:space-y-12">
@@ -35,6 +46,9 @@ const About = () => {
           <OurStory />
         </div>
 
+        {/* Anchor targets for Mission/Vision with header offset */}
+        <div id="mission" className="h-0 scroll-mt-24" />
+        <div id="vision" className="h-0 scroll-mt-24" />
         <div data-aos="fade-up">
           <OurVision />
         </div>

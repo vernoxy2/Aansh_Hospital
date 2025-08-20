@@ -4,7 +4,6 @@ import {
   FaBars,
   FaTimes,
   FaPhoneAlt,
-  FaSearch,
   FaEnvelope,
   FaCalendarPlus,
 } from "react-icons/fa";
@@ -13,12 +12,10 @@ import AppointmentForm from "./AppointmentForm";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
   const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
-  const searchRef = useRef(null);
   const phoneNumber = "08735019584";
 
   const navLinks = [
@@ -54,17 +51,6 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
-
-  useEffect(() => {
-    if (!showSearch) return;
-    const handleClickOutside = (e) => {
-      if (searchRef.current && !searchRef.current.contains(e.target)) {
-        setShowSearch(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [showSearch]);
 
   useEffect(() => {
     document.body.style.overflow = showAppointmentModal ? "hidden" : "auto";
@@ -109,52 +95,22 @@ const Navbar = () => {
           )}
 
           <div className="flex items-center gap-2 ml-auto">
-            {!showSearch ? (
-              <button
-                className="border-2 border-primary text-primary bg-white rounded-md w-9 h-9 hover:bg-primary/20 transition"
-                aria-label="Search"
-                onClick={() => setShowSearch(true)}
-              >
-                <FaSearch className="text-lg mx-auto" />
-              </button>
-            ) : (
-              <div
-                ref={searchRef}
-                className="flex items-center justify-between border-2 border-primary rounded-md bg-white px-1 h-10 w-40 md:w-60"
-              >
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  autoFocus
-                  className="flex-1 outline-none bg-transparent text-primary px-2"
-                />
-                <button
-                  onClick={() => setShowSearch(false)}
-                  aria-label="Close Search"
-                >
-                  <FaTimes className="text-xl text-primary hover:text-[#c51162]" />
-                </button>
-              </div>
-            )}
-
-            {!showSearch && (
-              <a
-                href={`tel:${phoneNumber}`}
-                className="border-2 border-primary text-primary bg-white rounded-md w-9 h-9 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
-                aria-label="Call"
-              >
-                <FaPhoneAlt />
-                <span className="hidden md:inline ml-2 font-bold">
-                  {phoneNumber}
-                </span>
-              </a>
-            )}
+            <a
+              href={`tel:${phoneNumber}`}
+              className="border-2 border-primary text-primary bg-white rounded-md w-9 h-9 md:w-auto md:px-3 hover:bg-primary/10 transition flex items-center justify-center"
+              aria-label="Call"
+            >
+              <FaPhoneAlt />
+              <span className="hidden md:inline ml-2 font-bold">
+                {phoneNumber}
+              </span>
+            </a>
 
             <button className="hidden md:inline-flex items-center bg-primary text-white font-bold rounded-md px-5 h-10 ml-1 hover:bg-[#c51162] transition">
               Get Started
             </button>
 
-            {isMobile && !showSearch && (
+            {isMobile && (
               <button
                 ref={buttonRef}
                 onClick={() => setIsOpen(!isOpen)}
