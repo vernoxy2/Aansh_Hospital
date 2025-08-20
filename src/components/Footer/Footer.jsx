@@ -20,7 +20,10 @@ const serviceLinks = [
   { label: "Department of Paediatrics", to: "/services#paediatrics" },
   { label: "Department of Neonatology", to: "/services#neonatology" },
   { label: "Department of Paediatric Intensive Care", to: "/services#picu" },
-  { label: "Paediatric Super Specialities", to: "/services#super-specialities" },
+  {
+    label: "Paediatric Super Specialities",
+    to: "/services#super-specialities",
+  },
   { label: "Department of Obstetrics", to: "/services#obstetrics" },
 ];
 
@@ -185,7 +188,9 @@ const Footer = () => {
                 {resourceLinks.map((link, i) => (
                   <li key={i}>
                     <Link
-                      onClick={() => window.screenTop(0)}
+                      onClick={() =>
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+                      }
                       to={link.to}
                       className="hover:text-primary text-secondary font-bold text-base cursor-pointer"
                     >
@@ -204,7 +209,9 @@ const Footer = () => {
               {resourceLinks.map((link, i) => (
                 <li key={i}>
                   <Link
-                    onClick={() => window.screenTop(0)}
+                    onClick={() =>
+                      window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
                     to={link.to}
                     className="hover:text-primary text-secondary font-bold text-base cursor-pointer"
                   >
