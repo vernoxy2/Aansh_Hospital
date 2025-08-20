@@ -47,7 +47,7 @@ const Footer = () => {
       className="relative bg-no-repeat bg-top pt-20 bg-[length:170%_300px] xl:bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-5 gap-4 md:gap-8 text-sm text-gray-600">
+      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-5 gap- md:gap-8 text-sm text-gray-600">
         {/* 1️⃣ Logo + Info */}
         <div className="space-y-4 flex flex-col items-center lg:items-start text-center lg:text-left">
           <img src={logo} alt="Aansh Logo" className="mx-auto lg:mx-0" />

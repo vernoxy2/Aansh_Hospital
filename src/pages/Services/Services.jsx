@@ -41,14 +41,14 @@ const Services = () => {
       {/* Main Content */}
       <section className="sm:py-5 space-y-12 xl:space-y-20">
         {/* In-page anchors for footer service links */}
+        <div data-aos="fade-up">
+          <Child />
+        </div>
         <div id="paediatrics" className="h-0 scroll-mt-24" />
         <div id="neonatology" className="h-0 scroll-mt-24" />
         <div id="picu" className="h-0 scroll-mt-24" />
         <div id="super-specialities" className="h-0 scroll-mt-24" />
         <div id="obstetrics" className="h-0 scroll-mt-24" />
-        <div data-aos="fade-up">
-          <Child />
-        </div>
 
         <div data-aos="fade-up">
           <OurService />
