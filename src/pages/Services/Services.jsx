@@ -22,6 +22,17 @@ const Services = () => {
     AOS.refresh();
   }, [location]);
 
+  // Scroll to in-page anchor when hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace(/^#/, "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
+
   return (
     <div data-aos="fade-down"  className="overflow-hidden">
       {/* Hero/Header Section */}
@@ -29,6 +40,12 @@ const Services = () => {
 
       {/* Main Content */}
       <section className="sm:py-5 space-y-12 xl:space-y-20">
+        {/* In-page anchors for footer service links */}
+        <div id="paediatrics" className="h-0 scroll-mt-24" />
+        <div id="neonatology" className="h-0 scroll-mt-24" />
+        <div id="picu" className="h-0 scroll-mt-24" />
+        <div id="super-specialities" className="h-0 scroll-mt-24" />
+        <div id="obstetrics" className="h-0 scroll-mt-24" />
         <div data-aos="fade-up">
           <Child />
         </div>
