@@ -60,7 +60,6 @@ const Footer = () => {
             appointment booking.
           </p>
           <button
-            onClick={() => setShowAppointmentModal(true)}
             className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary border border-primary transition duration-300 ease-in-out"
           >
             <span>📅</span> Book an Appointment <span>➔</span>
