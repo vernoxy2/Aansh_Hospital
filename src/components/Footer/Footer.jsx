@@ -36,7 +36,7 @@ const sections = [
 ];
 
 const locationDetails = {
-  address: "JW4H+4V2, beside Yes Bank, Kapadia Chal, Valsad, Gujarat 396001",
+  address: "201, 2nd floor, shree sanidhya Building Valsad, Valsad 396001",
   phone: "08735019584",
 };
 
