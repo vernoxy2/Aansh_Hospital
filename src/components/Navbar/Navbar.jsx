@@ -62,7 +62,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
-        <div className="container px-10 2xl:px-6 flex justify-between items-center ">
+        <div className="container lg:px-10 2xl:px-6 flex justify-between items-center ">
           <Link to="/">
             <img
               src={logo}
