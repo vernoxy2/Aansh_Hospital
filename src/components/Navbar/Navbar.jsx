@@ -62,7 +62,7 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-lg">
-        <div className="container lg:px-0 2xl:px-6 flex justify-between items-center ">
+        <div className="container px-10 2xl:px-6 flex justify-between items-center ">
           <Link to="/">
             <img
               src={logo}
@@ -106,9 +106,7 @@ const Navbar = () => {
               </span>
             </a>
 
-            <button className="hidden md:inline-flex items-center bg-primary text-white font-bold rounded-md px-5 h-10 ml-1 hover:bg-[#c51162] transition">
-              Get Started
-            </button>
+            
 
             {isMobile && (
               <button

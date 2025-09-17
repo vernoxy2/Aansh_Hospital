@@ -22,7 +22,7 @@ const HomeHeader = () => {
               20
             </h1>
             <p className="bg-primary text-white p-1 xl:p-4 text-sm sm:text-lg xl:text-4xl font-light ">
-              Years Experience
+              Years Of Experience
             </p>
           </div>
         </div>

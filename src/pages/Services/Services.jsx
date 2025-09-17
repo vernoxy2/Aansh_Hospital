@@ -34,7 +34,7 @@ const Services = () => {
   }, [location]);
 
   return (
-    <div data-aos="fade-down"  className="overflow-hidden">
+    <div data-aos="fade-down" className="overflow-hidden">
       {/* Hero/Header Section */}
       <ServicesHeader />
 
