@@ -6,9 +6,11 @@ import {
   FaPhoneAlt,
   FaEnvelope,
   FaCalendarPlus,
+  FaWhatsapp,
 } from "react-icons/fa";
 import logo from "../../assets/logo.png";
 import AppointmentForm from "./AppointmentForm";
+import { IoMdCall } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -106,8 +108,6 @@ const Navbar = () => {
               </span>
             </a>
 
-            
-
             {isMobile && (
               <button
                 ref={buttonRef}
@@ -148,7 +148,6 @@ const Navbar = () => {
           </div>
         )}
       </nav>
-
       <div className="fixed bottom-1 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
         <a
           href={`tel:7573952355`}
@@ -174,16 +173,24 @@ const Navbar = () => {
           </div>
         </a>
       </div>
-
+      // Inside your return JSX, place this just ABOVE the appointment button
+      <a
+        href={`https://wa.me/9737971953`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-3 md:bottom-28 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center justify-center p-4 hover:bg-green-600 transition"
+      >
+        <FaWhatsapp className="text-2xl" />
+      </a>
       <button
         onClick={() => setShowAppointmentModal(true)}
-        aria-label="Book an appointment"
-        className="fixed bottom-3 sm:bottom-6 md:bottom-8 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center gap-2 px-4 md:px-5 py-4 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
+        aria-label="Call For appointment"
+        className="hidden md:fixed bottom-3 sm:bottom-6 md:bottom-8 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg md:flex items-center gap-2 px-4 md:px-5 py-4 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
       >
-        <FaCalendarPlus className="text-xl" />
-        <span className="hidden sm:inline">Book an appointment</span>
+        <IoMdCall className="text-2xl" />
+        <span className="hidden sm:inline">Call For appointment</span>
       </button>
-
       {showAppointmentModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
           <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md relative">
