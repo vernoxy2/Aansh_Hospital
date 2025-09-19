@@ -35,7 +35,7 @@ const sections = [
 ];
 
 const locationDetails = {
-  address: "201, 2nd floor, shree sanidhya Building Valsad, Valsad 396001",
+  address: "201, Second Floor, Shriji Sanidhya Building, Besides Saint Joseph High School, Valsad - 396001 Gujarat, INDIA.",
   phone: "+91 97379 71953",
 };
 

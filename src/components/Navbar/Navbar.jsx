@@ -151,7 +151,7 @@ const Navbar = () => {
 
       <div className="fixed bottom-1 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
         <a
-          href={`tel:${phoneNumber}`}
+          href={`tel:7573952355`}
           className="bg-[#CD895C] text-white rounded-t-xl sm:rounded-tl-none sm:rounded-r-xl  shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
         >
           <span className="font-bold text-xs sm:text-sm md:rotate-180 md:writing-vertical mb-0">
@@ -163,7 +163,7 @@ const Navbar = () => {
         </a>
 
         <a
-          href="mailto:drashishgamit9@gmail.com"
+          href="mailto:drgamit00ash@gmail.com"
           className="bg-[#CD895C] text-white rounded-t-xl sm:rounded-tl-none sm:rounded-r-xl shadow-lg hover:bg-[#CD895C]/90 transition-all flex flex-row md:flex-col items-center justify-center w-36 h-14 md:w-14 md:h-40 px-1 py-2 gap-x-1 md:gap-y-2"
         >
           <span className="font-bold text-xs sm:text-sm md:rotate-180 md:writing-vertical mb-0">

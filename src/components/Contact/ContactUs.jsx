@@ -99,11 +99,8 @@ const ContactUs = () => {
             <div className="text-base md:text-xl">
               <div className="font-bold text-primary">Address</div>
               <div className="text-secondary font-semibold">
-                Aansh Children's Hospital,
-                <br className="hidden md:block" />
-                beside Yes Bank, Kapadia Chal,
-                <br className="hidden md:block" />
-                Valsad, Gujarat 396001
+                201, Second Floor, Shriji Sanidhya Building, Besides Saint
+                Joseph High School, Valsad - 396001 Gujarat, INDIA.
               </div>
             </div>
           </div>
