@@ -12,7 +12,7 @@ import About from "./pages/About/About";
 import Services from "./pages/Services/Services";
 import Facilities from "./pages/Facilities/Facilities";
 import Achievement from "./pages/Achievement/Achievement";
-import Career from "./pages/Career/Career";
+// import Career from "./pages/Career/Career";
 import Contact from "./pages/Contact/Contact";
 import Faq from "./pages/FAQ/Faq";
 import AOS from "aos";
@@ -43,7 +43,7 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/facilities" element={<Facilities />} />
         <Route path="/achievement" element={<Achievement />} />
-        <Route path="/career" element={<Career />} />
+        {/* <Route path="/career" element={<Career />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
       </Routes>

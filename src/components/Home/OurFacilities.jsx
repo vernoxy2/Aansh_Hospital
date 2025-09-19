@@ -52,8 +52,8 @@ const OurFacilities = () => {
                 alt={item.title}
                 className="w-full object-cover rounded-2xl transform group-hover:scale-105 transition duration-500 ease-in-out"
               />
-              <div className="absolute mr-20 inset-x-0 bottom-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="backdrop-blur-md bg-primary/60 p-4 text-white">
+              <div className="absolute mr-20 inset-x-0 bottom-0 transition-opacity duration-500">
+                <div className="backdrop-blur-sm rounded-tr-xl bg-primary/60 p-4 text-white">
                   <h3 className="text-xl font-bold">{item.title}</h3>
                   <p className="text-sm mt-1">{item.desc}</p>
                 </div>

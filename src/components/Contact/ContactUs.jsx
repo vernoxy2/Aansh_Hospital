@@ -42,7 +42,7 @@ const ContactUs = () => {
             </div>
             <div className="text-base md:text-xl">
               <div className="font-bold text-primary">Call Us</div>
-              <div className="text-secondary font-semibold">08735019584</div>
+              <div className="text-secondary font-semibold">+91 9737971953</div>
             </div>
           </div>
 
@@ -69,7 +69,7 @@ const ContactUs = () => {
                 href="mailto:drashishgamit9@gmail.com"
                 className="text-secondary font-semibold"
               >
-                drashishgamit9@gmail.com
+                drgamit00ash@gmail.com
               </a>
             </div>
           </div>

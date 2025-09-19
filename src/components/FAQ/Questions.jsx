@@ -6,7 +6,7 @@ const faqs = [
   {
     question: "How can I schedule an appointment?",
     answer:
-      "You can schedule an appointment by calling our reception or using our online appointment system on the website.",
+      "You can schedule an appointment by calling our reception.",
   },
   {
     question: "What is the process for rescheduling or canceling appointments?",
@@ -94,7 +94,7 @@ const Questions = () => {
             data-aos="fade-down"
           >
             <button
-              className="flex justify-between items-center w-full text-left font-bold text-primary text-base md:text-lg focus:outline-none"
+              className="flex justify-between items-center w-full text-left font-bold text-primary text-base md:text-xl focus:outline-none"
               onClick={() => handleToggle(idx)}
             >
               <span>{faq.question}</span>
@@ -115,7 +115,7 @@ const Questions = () => {
               </svg>
             </button>
             {openIndex === idx && (
-              <div className="mt-2 text-secondary text-sm md:text-base">
+              <div className="mt-2 text-secondary text-sm md:text-lg">
                 {faq.answer}
               </div>
             )}

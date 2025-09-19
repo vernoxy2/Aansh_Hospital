@@ -29,10 +29,12 @@ const ContactHero = () => {
           or need assistance, know that we’re more than just a healthcare
           provider – we’re your dedicated companions.
         </p>
-        <Link onClick={() => window.scrollTo(0, 0)} to={"/contact"}>
-        <button  className="bg-primary text-white font-bold px-8 py-3 rounded-lg hover:bg-primary/80 transition text-lg font-primary shadow">
-          Get a Quote
-        </button></Link>
+        <a href="tel:9737971953">
+  <button className="bg-primary text-white font-bold px-8 py-3 rounded-lg hover:bg-primary/80 transition text-lg font-primary shadow">
+    Call Us
+  </button>
+</a>
+
       </div>
       {/* Right Image */}
       <div className="flex-1 flex justify-right items-right mt-8 md:mt-0">

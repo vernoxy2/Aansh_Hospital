@@ -45,7 +45,7 @@ const Caring = () => {
         {caringData.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center w-full max-w-xs"
+            className="flex flex-col items-center w-full max-w-xs group"
             data-aos="flip-down"
           >
             {/* Circle image with magenta border and dots */}

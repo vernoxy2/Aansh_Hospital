@@ -1,29 +1,48 @@
-import React from 'react'
-import telephone from "../../assets/about/telephone.png"
+import React from "react";
+import telephone from "../../assets/about/telephone.png";
+import { IoMdCall } from "react-icons/io";
 
 const Contact = () => {
   return (
-    <div id="contact" className="relative w-full bg-white overflow-hidden py-8 md:py-16 px-4 flex items-center justify-center min-h-[400px] scroll-mt-24">
+    <div
+      id="contact"
+      className="relative w-full bg-white overflow-hidden py-8 md:py-16 px-4 flex items-center justify-center min-h-[400px] scroll-mt-24"
+    >
       {/* Main content and image */}
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-6xl mx-auto">
         {/* Left: Text content */}
-        <div className="flex-1 z-10 flex flex-col items-start justify-center max-w-xl" data-aos="fade-right">
+        <div
+          className="flex-1 z-10 flex flex-col items-start justify-center max-w-xl"
+          data-aos="fade-right"
+        >
           {/* Magenta bar and heading */}
           <div className="flex items-center mb-4">
             {/* <span className="inline-block h-8 w-20 bg-[#A82682] rounded-l-xl mr-3"></span> */}
-            <h2 className="text-primary text-3xl md:text-5xl font-bold">Contact us</h2>
+            <h2 className="text-primary text-3xl md:text-5xl font-bold">
+              Contact us
+            </h2>
           </div>
           {/* Description */}
           <p className="text-secondary text-base md:text-lg font-medium mb-8">
-            At Aansh Children’s Hospital, we want to ensure it's a path filled with personalized care and genuine support. Should you have questions or need assistance, know that we're more than just a healthcare provider – we're your dedicated companions.
+            At Aansh Children’s Hospital, we want to ensure it's a path filled
+            with personalized care and genuine support. Should you have
+            questions or need assistance, know that we're more than just a
+            healthcare provider – we're your dedicated companions.
           </p>
           {/* Button */}
-          <button className="bg-[#A82682] text-white text-lg md:text-xl font-bold rounded-xl px-10 py-3 shadow-md hover:bg-[#8d1e6d] transition">
-            Get a Quote
-          </button>
+          <a
+  href="tel:9737971953"
+  className="flex items-center justify-center gap-3 bg-[#A82682] text-white text-lg md:text-xl font-bold rounded-xl px-10 py-3 shadow-md hover:bg-[#8d1e6d] transition"
+>
+  <IoMdCall className="text-3xl" /> Call Us
+</a>
+
         </div>
         {/* Right: Telephone image */}
-        <div className="flex-1 flex justify-end items-center w-full mt-12 lg:mt-0" data-aos="fade-left">
+        <div
+          className="flex-1 flex justify-end items-center w-full mt-12 lg:mt-0"
+          data-aos="fade-left"
+        >
           <img
             src={telephone}
             alt="Telephone"
@@ -38,7 +57,7 @@ const Contact = () => {
       {/* Optional: fade effect on the right for the image */}
       <div className="hidden lg:block absolute right-0 top-0 h-full w-1/3 bg-gradient-to-l from-white to-transparent pointer-events-none z-20"></div>
     </div>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

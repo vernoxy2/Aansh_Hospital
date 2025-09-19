@@ -31,11 +31,11 @@ const WeAre = () => {
           </div>
 
           {/* Image */}
-          <div className="flex justify-center lg:justify-end" data-aos="fade-left">
+          <div className="flex justify-center lg:justify-end " data-aos="fade-left">
             <img
               src={whoWeAreImg}
               alt="Happy baby"
-              className="h-[320px] md:h-[400px] xl:h-[420px] object-contain lg:-mr-20"
+              className="h-[320px] md:h-[400px] xl:h-[420px] object-contain "
             />
           </div>
         </div>

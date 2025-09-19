@@ -16,7 +16,7 @@ const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
-  const phoneNumber = "08735019584";
+  const phoneNumber = "9737971953";
 
   const navLinks = [
     { to: "/", label: "Home" },
@@ -24,7 +24,7 @@ const Navbar = () => {
     { to: "/services", label: "Services" },
     { to: "/facilities", label: "Facilities" },
     { to: "/achievement", label: "Achievement" },
-    { to: "/career", label: "Career" },
+    // { to: "/career", label: "Career" },
     { to: "/contact", label: "Contact Us" },
     { to: "/faq", label: "FAQ" },
   ];

@@ -23,21 +23,20 @@ const sections = [
       { label: "Department of Neonatology", to: "/services#neonatology" },
       { label: "Department of Paediatric Intensive Care", to: "/services#picu" },
       { label: "Paediatric Super Specialities", to: "/services#super-specialities" },
-      { label: "Department of Obstetrics", to: "/services#obstetrics" },
     ],
   },
-  {
-    title: "Resources",
-    links: [
-      { label: "Career", to: "/career" },
-      { label: "FAQs", to: "/faq" },
-    ],
-  },
+  // {
+  //   title: "Resources",
+  //   links: [
+  //     { label: "Career", to: "/career" },
+  //     { label: "FAQs", to: "/faq" },
+  //   ],
+  // },
 ];
 
 const locationDetails = {
   address: "201, 2nd floor, shree sanidhya Building Valsad, Valsad 396001",
-  phone: "08735019584",
+  phone: "+91 97379 71953",
 };
 
 const Footer = () => {
@@ -49,12 +48,12 @@ const Footer = () => {
       className="relative bg-no-repeat bg-top pt-20 bg-[length:170%_300px] xl:bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-5 gap-8 text-sm text-gray-600">
+      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-4 gap-8 text-sm text-gray-600">
         
         {/* Logo + Info */}
         <div className="space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
           <img src={logo} alt="Aansh Logo" />
-          <p className="font-semibold text-base text-secondary">
+          <p className="font-semibold text-base text-secondary md:max-w-md lg:w-full">
             Aansh Children's Hospital offers trusted, compassionate care for
             women and children with expert doctors, innovation, and easy
             appointment booking.

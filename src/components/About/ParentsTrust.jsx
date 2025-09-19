@@ -41,7 +41,7 @@ const ParentsTrust = () => {
         </div>
       </div>
 
-      <div id="team" className="container 2xl:px-0 w-full flex flex-col items-center justify-center py-8 md:py-16 space-y-0 scroll-mt-24">
+      <div id="team" className="container xl:px-0 w-full flex flex-col items-center justify-center py-8 md:py-16 space-y-0 scroll-mt-24">
         <img src={staff} alt="" data-aos="zoom-in" className="w-full pointer-events-none" />
         <div
           className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 px-4"

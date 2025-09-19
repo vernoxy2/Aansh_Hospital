@@ -47,7 +47,7 @@ const Home = () => {
         </div>
 
         <div data-aos="fade-up">
-          <CuttingEdge />
+          {/* <CuttingEdge /> */}
         </div>
       </section>
     </div>

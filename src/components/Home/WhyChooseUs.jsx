@@ -44,18 +44,25 @@ const WhyChooseUs = () => {
   }, []); // ✅ run only once on mount
 
   return (
-    <section id="why-choose-us" className="py-10 md:py-16 space-y-10 mb-10 bg-white">
-      <div className="container flex flex-col xl:flex-row items-center justify-between">
+    <section
+      id="why-choose-us"
+      className="py-10 md:py-16 space-y-10 mb-10 bg-white"
+    >
+      <div className="container pr-0 flex flex-col xl:flex-row items-center justify-between">
         {/* Heading */}
         <div data-aos="zoom-in" className="text-center xl:text-left">
           <h1 className="text-3xl sm:text-4xl xl:text-6xl font-bold text-primary">
-            Why Choose Us
+            Why Choose Us?
           </h1>
         </div>
 
         {/* Decorative Line Image */}
         <div className="hidden xl:block " data-aos="flip-up">
-          <img src={image} alt="Why Choose Us" className="w-full  max-w-md" />
+          <img
+            src={image}
+            alt="Why Choose Us"
+            className="w-full max-w-2xl 2xl:max-w-3xl"
+          />
         </div>
       </div>
 
@@ -65,8 +72,8 @@ const WhyChooseUs = () => {
           {features.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl overflow-hidden flex flex-col p-5 transform transition-transform duration-300 hover:-translate-y-2 hover:scale-105 cursor-pointer"
-              data-aos="flip-left"
+              className="bg-white rounded-xl shadow-md flex flex-col p-5 transform transition-transform duration-100  hover:shadow-2xl hover:-translate-y-4 hover:scale-105 cursor-pointer"
+              data-aos="fade"
             >
               <div className="relative">
                 <img
