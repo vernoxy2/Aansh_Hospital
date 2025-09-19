@@ -7,7 +7,7 @@ import { IoMdContact } from "react-icons/io";
 const HomeHeader = () => {
   return (
     <section
-      className="relative mt-[63px] md:mt-[80px] w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[650px] bg-cover bg-center"
+      className="py-0 relative mt-[15px] md:mt-[56px] w-full h-[210px] sm:h-[320px] md:h-[310px] lg:h-[420px] xl:h-[650px] bg-cover bg-center"
       style={{ backgroundImage: `url(${HeaderHomeImg})` }}
     >
       {/* Optional Text/CTA Section */}

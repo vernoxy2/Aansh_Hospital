@@ -9,8 +9,20 @@ import icon3 from "../../assets/servicesSectionImg3.png";
 import icon4 from "../../assets/servicesSectionImg4.png";
 import icon5 from "../../assets/servicesSectionImg5.png";
 import icon6 from "../../assets/servicesSectionImg6.png";
+import { p } from "motion/react-client";
 
 const services = [
+  {
+    title: (
+  <>
+    NICU Level 3A New <br />
+    (Neonatal Intensive Care Unit)
+  </>
+),
+
+    desc: "Providing advanced neonatal care for fragile newborns with compassion",
+    icon: icon3,
+  },
   {
     title: "Isolation NICU for septic infants",
     desc: "Dedicated NICU for septic newborns ensures safe, isolated care for infectious and vulnerable babies.",
@@ -20,11 +32,6 @@ const services = [
     title: "Mother-Baby Kangaroo Care Space",
     desc: "Safe, nurturing space for mother-baby bonding through Kangaroo Care and breastfeeding support.",
     icon: icon2,
-  },
-  {
-    title: "Latest & Well Equipped Ambulance",
-    desc: "Latest and fully equipped ambulance services for emergency medical support.",
-    icon: icon3,
   },
   {
     title: "Well equipped 2 Bedded PICU (Paediatric Intensive Care)",
@@ -74,7 +81,7 @@ const OurService = () => {
                 <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-primary">
                   {item.title}
                 </h3>
-                <p className="text-sm sm:text-base text-secondary font-medium">
+                <p className="text-sm sm:text-base text-secondary font-medium 2xl:max-w-[260px] mx-auto">
                   {item.desc}
                 </p>
               </div>

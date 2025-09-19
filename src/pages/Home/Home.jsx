@@ -11,6 +11,7 @@ import OurFacilities from "../../components/Home/OurFacilities";
 import WhyChooseUs from "../../components/Home/WhyChooseUs";
 import CuttingEdge from "../../components/Home/CuttingEdge";
 import HomeHeader from "../../components/Home/HomeHeader";
+import MeetDoct from "../../components/Home/MeetDoct";
 
 const Home = () => {
   const location = useLocation();
@@ -32,6 +33,10 @@ const Home = () => {
         {/* Sections with AOS animations */}
         <div data-aos="fade-up">
           <WeAre />
+        </div>
+
+        <div data-aos="fade-up">
+          <MeetDoct />
         </div>
 
         <div data-aos="fade-up">

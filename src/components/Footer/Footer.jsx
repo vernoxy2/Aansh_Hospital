@@ -53,17 +53,12 @@ const Footer = () => {
         {/* Logo + Info */}
         <div className="space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
           <img src={logo} alt="Aansh Logo" />
-          <p className="font-semibold text-base text-secondary md:max-w-md lg:w-full">
+          <p className="font-semibold text-base text-secondary max-w-xs lg:w-full">
             Aansh Children's Hospital offers trusted, compassionate care for
             women and children with expert doctors, innovation, and easy
             appointment booking.
           </p>
-          <button
-            onClick={() => setShowAppointmentModal(true)}
-            className="bg-primary text-white px-4 py-2 rounded-md flex items-center gap-2 mt-4 hover:bg-white hover:text-primary border border-primary"
-          >
-            <span>📅</span> Book an Appointment <span>➔</span>
-          </button>
+          
         </div>
 
         {/* Dynamic Sections */}
@@ -73,7 +68,7 @@ const Footer = () => {
             <div className="lg:hidden">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex justify-between items-center border-b-2 border-primary pb-3 text-2xl font-bold text-primary"
+                className="w-full flex justify-between items-center border-b-2 border-primary pb-1 text-xl font-bold text-primary"
               >
                 {section.title}
                 <FaChevronDown
@@ -81,7 +76,7 @@ const Footer = () => {
                 />
               </button>
               {openIndex === i && (
-                <ul className="mt-2 space-y-1 pl-2">
+                <ul className="pl-2">
                   {section.links.map((link, idx) => (
                     <li key={idx}>
                       <Link
@@ -119,10 +114,10 @@ const Footer = () => {
 
         {/* Location */}
         <div>
-          <h3 className="font-bold text-2xl text-primary mb-2">Location</h3>
+          <h3 className="font-bold text-xl lg:text-2xl text-primary mb-2">Location</h3>
           <p className="text-secondary font-bold">{locationDetails.address}</p>
           <h4 className="mt-4 text-primary font-bold text-xl lg:text-2xl">Call Us</h4>
-          <p className="text-secondary font-semibold text-lg lg:text-xl">{locationDetails.phone}</p>
+          <p className="text-secondary font-semibold ">{locationDetails.phone}</p>
         </div>
       </div>
 

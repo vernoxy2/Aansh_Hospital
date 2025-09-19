@@ -149,10 +149,10 @@ const OurHospitalFacilities = () => {
 
       {/* Highlight Banner */}
       <div
-        className="w-full bg-gradient-to-r from-white via-[#cc8ba8] to-[#A82682] py-4 "
-        data-aos="fade-up"
-      >
-        <p className="text-center text-white text-base md:text-xl lg:text-2xl font-semibold container w-2/3 lg:w-3/5">
+          className="w-full bg-gradient-to-r from-primary/40 via-primary/80 to-primary py-4 "
+          data-aos="zoom-in-up"
+        >
+        <p className="text-center text-white text-base md:text-xl lg:text-2xl font-semibold container w-5/6 lg:w-3/5">
           Our hospital ensures convenience and safety with well-organized
           parking, a fully-stocked in-house pharmacy, and 24/7 ambulance service
           — all designed to support patients, visitors, and staff efficiently.

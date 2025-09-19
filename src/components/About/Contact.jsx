@@ -31,12 +31,11 @@ const Contact = () => {
           </p>
           {/* Button */}
           <a
-  href="tel:9737971953"
-  className="flex items-center justify-center gap-3 bg-[#A82682] text-white text-lg md:text-xl font-bold rounded-xl px-10 py-3 shadow-md hover:bg-[#8d1e6d] transition"
->
-  <IoMdCall className="text-3xl" /> Call Us
-</a>
-
+            href="tel:9737971953"
+            className="flex items-center justify-center gap-3 bg-[#A82682] text-white text-lg md:text-xl font-bold rounded-xl px-10 py-3 shadow-md hover:bg-[#8d1e6d] transition"
+          >
+            <IoMdCall className="text-3xl" /> Call Us
+          </a>
         </div>
         {/* Right: Telephone image */}
         <div

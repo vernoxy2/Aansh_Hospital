@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 // import bg from "../../assets/FAQ/Mask_group(1).png";
 import bg from "../../assets/FAQ/Mask_group.png";
 import { Link } from "react-router-dom";
+import { IoMdCall } from "react-icons/io";
 
 const ContactHero = () => {
   useEffect(() => {
@@ -29,12 +30,12 @@ const ContactHero = () => {
           or need assistance, know that we’re more than just a healthcare
           provider – we’re your dedicated companions.
         </p>
-        <a href="tel:9737971953">
-  <button className="bg-primary text-white font-bold px-8 py-3 rounded-lg hover:bg-primary/80 transition text-lg font-primary shadow">
-    Call Us
-  </button>
-</a>
-
+        <a
+          href="tel:9737971953"
+          className="flex items-center justify-center max-w-[200px] gap-3 bg-[#A82682] text-white text-lg md:text-xl font-bold rounded-xl px-10 py-3 shadow-md hover:bg-[#8d1e6d] transition"
+        >
+          <IoMdCall className="text-3xl" /> Call Us
+        </a>
       </div>
       {/* Right Image */}
       <div className="flex-1 flex justify-right items-right mt-8 md:mt-0">

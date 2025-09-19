@@ -17,6 +17,7 @@ import Contact from "./pages/Contact/Contact";
 import Faq from "./pages/FAQ/Faq";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import NotFound from "./pages/NotFound";
 
 function AppContent() {
   const location = useLocation();
@@ -43,9 +44,10 @@ function AppContent() {
         <Route path="/services" element={<Services />} />
         <Route path="/facilities" element={<Facilities />} />
         <Route path="/achievement" element={<Achievement />} />
-        {/* <Route path="/career" element={<Career />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<Faq />} />
+         {/* Catch-all 404 Route */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

@@ -81,7 +81,7 @@ const Navbar = () => {
                     key={to}
                     to={to}
                     className={({ isActive }) =>
-                      `px-2 py-[6px] rounded-lg font-bold text-base transition-colors duration-200 ${
+                      `px-4 py-[6px] rounded-lg font-bold text-base transition-colors duration-200 ${
                         isActive
                           ? "bg-white text-[#A82682]"
                           : "text-white hover:bg-white/20"
@@ -179,7 +179,7 @@ const Navbar = () => {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed bottom-3 md:bottom-28 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center justify-center p-4 hover:bg-green-600 transition"
+        className="fixed bottom-3 md:bottom-24 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg flex items-center justify-center p-4 hover:bg-green-600 transition"
       >
         <FaWhatsapp className="text-2xl" />
       </a>
