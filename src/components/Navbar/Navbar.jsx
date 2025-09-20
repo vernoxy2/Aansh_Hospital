@@ -9,12 +9,10 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import logo from "../../assets/logo.png";
-import AppointmentForm from "./AppointmentForm";
 import { IoMdCall } from "react-icons/io";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1280);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
@@ -26,7 +24,6 @@ const Navbar = () => {
     { to: "/services", label: "Services" },
     { to: "/facilities", label: "Facilities" },
     { to: "/achievement", label: "Achievement" },
-    // { to: "/career", label: "Career" },
     { to: "/contact", label: "Contact Us" },
     { to: "/faq", label: "FAQ" },
   ];
@@ -53,13 +50,6 @@ const Navbar = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isOpen]);
-
-  useEffect(() => {
-    document.body.style.overflow = showAppointmentModal ? "hidden" : "auto";
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [showAppointmentModal]);
 
   return (
     <>
@@ -148,6 +138,8 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+
+      {/* Emergency & Enquire buttons */}
       <div className="fixed bottom-1 left-0 md:top-3/4 xl:top-1/2 md:-translate-y-1/2 md:left-auto z-40 flex flex-row md:flex-col gap-0.5 sm:gap-2">
         <a
           href={`tel:7573952355`}
@@ -173,9 +165,10 @@ const Navbar = () => {
           </div>
         </a>
       </div>
-      // Inside your return JSX, place this just ABOVE the appointment button
+
+      {/* WhatsApp Floating Button */}
       <a
-        href={`https://wa.me/9737971953`}
+        href={`https://wa.me/${phoneNumber}`}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
@@ -183,27 +176,26 @@ const Navbar = () => {
       >
         <FaWhatsapp className="text-2xl" />
       </a>
-      <button
-        onClick={() => setShowAppointmentModal(true)}
+
+      {/* Call Floating Button */}
+      <a
+        href={`tel:${phoneNumber}`}
         aria-label="Call For appointment"
-        className="hidden md:fixed bottom-3 sm:bottom-6 md:bottom-8 right-3 sm:right-6 md:right-8 z-50 bg-primary text-white rounded-full shadow-lg md:flex items-center gap-2 px-4 md:px-5 py-4 md:py-3 hover:bg-fuchsia-700 transition text-sm sm:text-base md:text-lg font-bold"
+        className="group hidden md:fixed bottom-3 sm:bottom-6 md:bottom-8 right-3 sm:right-6 md:right-8
+             z-50 bg-primary text-white rounded-full shadow-lg md:flex items-center gap-2
+             px-4 py-4 md:py-3 hover:bg-fuchsia-700 transition-all duration-300 ease-in-out
+             text-sm sm:text-base md:text-lg font-bold overflow-hidden w-14 hover:w-56"
       >
-        <IoMdCall className="text-2xl" />
-        <span className="hidden sm:inline">Call For appointment</span>
-      </button>
-      {showAppointmentModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
-          <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-md relative">
-            <button
-              className="absolute top-2 right-2 text-2xl text-gray-400 hover:text-primary"
-              onClick={() => setShowAppointmentModal(false)}
-            >
-              &times;
-            </button>
-            <AppointmentForm onClose={() => setShowAppointmentModal(false)} />
-          </div>
-        </div>
-      )}
+        <IoMdCall className="text-2xl flex-shrink-0" />
+
+        {/* Slide-in text on hover */}
+        <span
+          className="opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 
+               transition-all duration-300 ease-in-out whitespace-nowrap"
+        >
+          Call For Appointment
+        </span>
+      </a>
     </>
   );
 };

@@ -69,7 +69,7 @@ const OurFacilities = () => {
             onClick={() => window.scrollTo(0, 0)}
             className="bg-primary text-white text-base xl:text-xl font-semibold px-6 py-3 rounded-lg hover:bg-fuchsia-700 transition-all"
           >
-            View More
+            View More         
           </Link>
         </div>
       </div>
