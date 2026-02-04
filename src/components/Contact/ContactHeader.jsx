@@ -18,7 +18,7 @@ const ContactHeader = () => {
           </h1>
           <p className="font-semibold leading-tight text-[9px] lg:text-xl text-primary w-1/2 lg:w-2/5">
             Reach out to our pediatric care team for appointments, inquiries, or
-            support—compassionate assistance just a call or message away. 
+            support—compassionate assistance just a call or message away.
           </p>
         </div>
       </div>

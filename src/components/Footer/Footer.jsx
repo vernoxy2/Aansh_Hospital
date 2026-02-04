@@ -21,8 +21,14 @@ const sections = [
     links: [
       { label: "Department of Paediatrics", to: "/services#paediatrics" },
       { label: "Department of Neonatology", to: "/services#neonatology" },
-      { label: "Department of Paediatric Intensive Care", to: "/services#picu" },
-      { label: "Paediatric Super Specialities", to: "/services#super-specialities" },
+      {
+        label: "Department of Paediatric Intensive Care",
+        to: "/services#picu",
+      },
+      {
+        label: "Paediatric Super Specialities",
+        to: "/services#super-specialities",
+      },
     ],
   },
   // {
@@ -35,7 +41,8 @@ const sections = [
 ];
 
 const locationDetails = {
-  address: "201, Second Floor, Shriji Sanidhya Building, Besides Saint Joseph High School, Valsad - 396001 Gujarat, INDIA.",
+  address:
+    "201, Second Floor, Shriji Sanidhya Building, Besides Saint Joseph High School, Valsad - 396001 Gujarat, INDIA.",
   phone: "+91 97379 71953",
 };
 
@@ -45,11 +52,10 @@ const Footer = () => {
 
   return (
     <footer
-      className="relative bg-no-repeat bg-top pt-20 bg-[length:170%_300px] xl:bg-cover"
+      className="relative bg-no-repeat bg-top pt-20 bg-[length:170%_300px] xl:bg-cover "
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-4 gap-8 text-sm text-gray-600">
-        
+      <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-4 gap-8 text-sm text-gray-600 relative z-10">
         {/* Logo + Info */}
         <div className="space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
           <img src={logo} alt="Aansh Logo" />
@@ -58,7 +64,6 @@ const Footer = () => {
             women and children with expert doctors, innovation, and easy
             appointment booking.
           </p>
-          
         </div>
 
         {/* Dynamic Sections */}
@@ -81,7 +86,9 @@ const Footer = () => {
                     <li key={idx}>
                       <Link
                         to={link.to}
-                        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                        onClick={() =>
+                          window.scrollTo({ top: 0, behavior: "smooth" })
+                        }
                         className="block text-secondary font-bold text-base hover:text-primary"
                       >
                         {link.label}
@@ -94,13 +101,17 @@ const Footer = () => {
 
             {/* Desktop */}
             <div className="hidden lg:block">
-              <h3 className="font-bold text-2xl text-primary mb-2">{section.title}</h3>
+              <h3 className="font-bold text-2xl text-primary mb-2">
+                {section.title}
+              </h3>
               <ul className="space-y-1">
                 {section.links.map((link, idx) => (
                   <li key={idx}>
                     <Link
                       to={link.to}
-                      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                      onClick={() =>
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+                      }
                       className="block text-secondary font-bold text-base hover:text-primary"
                     >
                       {link.label}
@@ -114,18 +125,27 @@ const Footer = () => {
 
         {/* Location */}
         <div>
-          <h3 className="font-bold text-xl lg:text-2xl text-primary mb-2">Location</h3>
+          <h3 className="font-bold text-xl lg:text-2xl text-primary mb-2">
+            Location
+          </h3>
           <p className="text-secondary font-bold">{locationDetails.address}</p>
-          <h4 className="mt-4 text-primary font-bold text-xl lg:text-2xl">Call Us</h4>
-          <p className="text-secondary font-semibold ">{locationDetails.phone}</p>
+          <h4 className="mt-4 text-primary font-bold text-xl lg:text-2xl">
+            Call Us
+          </h4>
+          <a href={`tel:${locationDetails.phone}`} className="text-secondary font-semibold ">
+            {locationDetails.phone}
+          </a>
         </div>
       </div>
 
       {/* Heart Divider */}
-      <div className="xl:-mt-24 -mt-8">
+      <div className="xl:-mt-24 -mt-8 relative z-0">
         <img src={heart} alt="Heart Divider" className="ml-auto" />
       </div>
 
+      <p className="text-center pb-4 sm:pb-5 md:pb-6 text-primary font-semibold mt-auto">
+        © {new Date().getFullYear()} Developed by @Vernoxy
+      </p>
       {/* Appointment Modal */}
       {showAppointmentModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
