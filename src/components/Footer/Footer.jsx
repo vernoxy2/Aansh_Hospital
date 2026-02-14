@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronDown } from "react-icons/fa";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import heart from "../../assets/footer_lower.webp";
 import bg from "../../assets/footer_bg.webp";
 import AppointmentForm from "../Navbar/AppointmentForm";
+import LazyImage from "../LazyImage";
 
 const sections = [
   {
@@ -58,7 +59,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 xl:pt-10 grid grid-cols-1 lg:grid-cols-4 gap-8 text-sm text-gray-600 relative z-10">
         {/* Logo + Info */}
         <div className="space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start">
-          <img src={logo} alt="Aansh Logo" />
+          <LazyImage src={logo} alt="Aansh Logo" />
           <p className="font-semibold text-base text-secondary max-w-xs lg:w-full">
             Aansh Children's Hospital offers trusted, compassionate care for
             women and children with expert doctors, innovation, and easy
@@ -140,7 +141,7 @@ const Footer = () => {
 
       {/* Heart Divider */}
       <div className="xl:-mt-24 -mt-8 relative z-0">
-        <img src={heart} alt="Heart Divider" className="ml-auto" />
+        <LazyImage src={heart} alt="Heart Divider" className="ml-auto" />
       </div>
 
       <p className="text-center pb-4 sm:pb-5 md:pb-6 text-primary font-semibold mt-auto">

@@ -1,6 +1,7 @@
 import React from "react";
 import telephone from "../../assets/about/telephone.png";
 import { IoMdCall } from "react-icons/io";
+import LazyImage from "../LazyImage";
 
 const Contact = () => {
   return (
@@ -42,7 +43,7 @@ const Contact = () => {
           className="flex-1 flex justify-end items-center w-full mt-12 lg:mt-0"
           data-aos="fade-left"
         >
-          <img
+          <LazyImage
             src={telephone}
             alt="Telephone"
             className="w-[350px] md:w-[420px] lg:w-[520px] xl:w-[600px] max-w-full opacity-70"

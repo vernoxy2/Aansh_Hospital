@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import nurse from "../../assets/about/nurse.png";
+import LazyImage from "../LazyImage";
 
 const OurStory = () => {
   useEffect(() => {
@@ -24,7 +25,7 @@ const OurStory = () => {
           </div>
           <div className="relative w-full h-auto">
             {/* Background Image */}
-            <img
+            <LazyImage
               src={nurse}
               alt="Nurse"
               className="w-full h-full object-cover"

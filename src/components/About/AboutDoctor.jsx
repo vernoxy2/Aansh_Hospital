@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import doctor from "../../assets/about/ashish.png";
+import LazyImage from "../LazyImage";
 
 const AboutDoctor = () => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const AboutDoctor = () => {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center gap-8">
           <div className="" data-aos="fade-left">
-            <img
+            <LazyImage
               src={doctor}
               alt="About Doctor"
               className="sm:w-full w-[80%] mx-auto"

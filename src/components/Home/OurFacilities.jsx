@@ -5,6 +5,7 @@ import image1 from "../../assets/facilitiesSectionImg1.png";
 import image2 from "../../assets/facilitiesSectionImg2.jpg";
 import image3 from "../../assets/facilitiesSectionImg3.png";
 import { Link } from "react-router-dom";
+import LazyImage from "../LazyImage";
 
 const facilities = [
   {
@@ -47,7 +48,7 @@ const OurFacilities = () => {
               className="relative overflow-hidden rounded-2xl shadow-lg group"
               data-aos="flip-right"
             >
-              <img
+              <LazyImage
                 src={item.image}
                 alt={item.title}
                 className="w-full object-cover rounded-2xl transform group-hover:scale-105 transition duration-500 ease-in-out"

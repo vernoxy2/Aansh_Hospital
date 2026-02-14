@@ -3,6 +3,7 @@ import HeaderFacilitiesImg1 from "../../assets/headerFacilitiesImg.png";
 import HeaderLower from "../../assets/HeaderLower.svg";
 import { IoCalendar } from "react-icons/io5";
 import { IoMdContact } from "react-icons/io";
+import LazyImage from "../LazyImage";
 
 const FacilitiesHeader = () => {
   return (
@@ -55,7 +56,7 @@ const FacilitiesHeader = () => {
       </div>
 
       {/* HeaderLower Overlay */}
-      <img
+      <LazyImage
         src={HeaderLower}
         alt="Lower Decoration"
         className="absolute -bottom-1.5 sm:-bottom-3 xl:-bottom-6 w-full left-0  pointer-events-none"

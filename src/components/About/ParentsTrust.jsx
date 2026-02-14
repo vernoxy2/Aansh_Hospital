@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import familyHeart from "../../assets/about/family.png";
 import staff from "../../assets/about/staff.png";
+import LazyImage from "../LazyImage";
 
 const ParentsTrust = () => {
   useEffect(() => {
@@ -16,7 +17,7 @@ const ParentsTrust = () => {
           className=" flex-shrink-0 flex justify-center w-full lg:w-1/2 mb-8 lg:mb-0"
           data-aos="fade-right"
         >
-          <img
+          <LazyImage
             src={familyHeart}
             alt="Why parents trust us"
             className="w-full h-auto"

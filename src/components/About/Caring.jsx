@@ -4,6 +4,7 @@ import "aos/dist/aos.css";
 import support from "../../assets/about/support.png";
 import hygiene from "../../assets/about/hygiene.png";
 import comfort from "../../assets/about/comfort.png";
+import LazyImage from "../LazyImage";
 
 const caringData = [
   {
@@ -53,7 +54,7 @@ const Caring = () => {
               {/* Outer magenta border */}
               <div className=" flex items-center justify-center">
                 {/* Actual image */}
-                <img
+                <LazyImage
                   src={item.image}
                   alt={item.title}
                   className="rounded-full w-80 h-80 object-cover"

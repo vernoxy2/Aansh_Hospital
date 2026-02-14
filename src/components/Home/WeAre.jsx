@@ -1,5 +1,6 @@
 import React from "react";
 import whoWeAreImg from "../../assets/baby.png";
+import LazyImage from "../LazyImage";
 
 const WeAre = () => {
   return (
@@ -32,10 +33,11 @@ const WeAre = () => {
 
           {/* Image */}
           <div className="flex justify-center lg:justify-end " data-aos="fade-left">
-            <img
+            <LazyImage
               src={whoWeAreImg}
               alt="Happy baby"
               className="h-[320px] md:h-[400px] xl:h-[420px] object-contain "
+              loading="lazy"
             />
           </div>
         </div>

@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import visionImg from "../../assets/about/ourVision.png";
 import missionImg from "../../assets/about/ourMission.png";
+import LazyImage from "../LazyImage";
 
 const visionData = [
   {
@@ -53,7 +54,7 @@ const OurVision = () => {
                 {item.title}
               </h2>
               <div className="w-full flex justify-center">
-                <img
+                <LazyImage
                   src={item.image}
                   alt={item.title}
                   className="rounded-xl w-full p-4 object-contain"

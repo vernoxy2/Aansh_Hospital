@@ -1,5 +1,6 @@
 import React from "react";
 import MeetImg from "../../assets/MeetImg.webp";
+import LazyImage from "../LazyImage";
 
 const MeetDoct = () => {
   return (
@@ -7,7 +8,7 @@ const MeetDoct = () => {
       <div className="container pr-0 grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Image Section */}
         <div className="order-2 lg:order-1">
-          <img src={MeetImg} alt="" className="w-[80%] mx-auto" />
+          <LazyImage src={MeetImg} alt="" className="w-[80%] mx-auto" loading="lazy" />
         </div>
 
         {/* Text Section */}

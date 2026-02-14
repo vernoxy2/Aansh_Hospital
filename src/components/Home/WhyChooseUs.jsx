@@ -6,6 +6,7 @@ import image1 from "../../assets/section1.png";
 import image2 from "../../assets/section2.png";
 import image3 from "../../assets/section3.png";
 import image4 from "../../assets/section4.png";
+import LazyImage from "../LazyImage";
 
 const features = [
   {
@@ -58,7 +59,7 @@ const WhyChooseUs = () => {
 
         {/* Decorative Line Image */}
         <div className="hidden xl:block " data-aos="flip-up">
-          <img
+          <LazyImage
             src={image}
             alt="Why Choose Us"
             className="w-full max-w-2xl 2xl:max-w-3xl"
@@ -76,7 +77,7 @@ const WhyChooseUs = () => {
               data-aos="fade"
             >
               <div className="relative">
-                <img
+                <LazyImage
                   src={item.image}
                   alt={item.title}
                   className="w-full h-48 object-contain"

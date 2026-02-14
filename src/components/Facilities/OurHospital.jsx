@@ -14,6 +14,7 @@ import img6 from "../../assets/facilities/Mask_group_(5).png";
 import parkingImg from "../../assets/facilities/parking.png";
 import pharmaImg from "../../assets/facilities/pharma.png";
 import ambulanceImg from "../../assets/facilities/ambulance_(2).png";
+import LazyImage from "../LazyImage";
 
 // Facilities Data Array
 const facilities = [
@@ -103,7 +104,7 @@ const OurHospitalFacilities = () => {
                   {facility.desc}
                 </p>
               </div>
-              <img
+              <LazyImage
                 src={facility.image}
                 alt={facility.title}
                 className="rounded-lg w-full h-48 object-cover mt-auto"
@@ -111,7 +112,7 @@ const OurHospitalFacilities = () => {
             </div>
           ))}
         </div>
-        <img src={Bg} alt="" className="absolute -top-10 left-0 w-full z-0" />
+        <LazyImage src={Bg} alt="" className="absolute -top-10 left-0 w-full z-0" />
       </div>
 
       {/* Basic Facilities */}
@@ -129,7 +130,7 @@ const OurHospitalFacilities = () => {
               className="bg-white rounded-xl shadow-lg flex flex-col items-center md:items-start transition duration-300 group cursor-pointer overflow-hidden hover:bg-primary/10"
               data-aos="flip-down"
             >
-              <img
+              <LazyImage
                 src={facility.icon}
                 alt={facility.iconAlt}
                 className="w-full object-contain group-hover:scale-105 transition duration-500"

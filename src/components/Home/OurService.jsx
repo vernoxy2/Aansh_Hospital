@@ -9,7 +9,7 @@ import icon3 from "../../assets/servicesSectionImg3.png";
 import icon4 from "../../assets/servicesSectionImg4.png";
 import icon5 from "../../assets/servicesSectionImg5.png";
 import icon6 from "../../assets/servicesSectionImg6.png";
-import { p } from "motion/react-client";
+import LazyImage from "../LazyImage";
 
 const services = [
   {
@@ -86,7 +86,7 @@ const OurService = () => {
                 </p>
               </div>
               <div className="flex justify-center mt-auto pt-4">
-                <img
+                <LazyImage
                   src={item.icon}
                   alt={item.title}
                   className="w-36 h-36 sm:w-44 sm:h-44 object-contain"
