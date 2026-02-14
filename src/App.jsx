@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Logo from "./assets/logo.png"
+import LazyImage from "./components/LazyImage";
 
 // 🔥 Lazy load all pages
 const Home = lazy(() => import("./pages/Home/Home"));
@@ -46,7 +47,7 @@ function AppContent() {
         fallback={
             <div className="flex flex-col justify-center items-center h-screen text-xl space-y-5">
 
-              <img src={Logo} alt="" loading="lazy" className="animate-pulse"/>
+              <LazyImage src={Logo} alt="" loading="lazy" className="animate-pulse"/>
               <p className="text-primary font-semibold">Loading...</p>
 
             </div>
